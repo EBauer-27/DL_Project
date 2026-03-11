@@ -1,0 +1,112 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{amsmath}
+
+\title{Multimodal Skin Lesion Classification: Investigating the Influence of Metadata on Model Decision-Making}
+\author{Alexandra, Eva, Nina}
+\date{January 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Project Goal}
+
+\begin{itemize}
+\item Investigate how patient metadata influences the decision-making process in skin lesion classification.
+\item Implement a robust \textbf{binary classification} (Malignant vs. Benign) pipeline across heterogeneous datasets.
+\item Compare image-only, metadata-only, and multimodal models.
+\item Analyze which metadata features contribute most to predictions and how they alter visual attention.
+\item Use advanced explainability techniques (Grad-CAM and CRP) to visualize model behavior.
+\item Test robustness of the models on a different dataset to evaluate generalization.
+\end{itemize}
+
+
+\section*{Datasets}
+
+\textbf{Primary Dataset: MRA-MIDAS (Multimodal Skin Lesion Dataset)\cite{mra_midas_dataset}}
+
+\begin{itemize}
+\item Dermoscopic skin lesion images with associated patient metadata.
+\item \textbf{Label Mapping:} We will map granular diagnoses (from path reports) into a binary schema:
+    \begin{itemize}
+    \item \textbf{Malignant:} Melanoma, BCC, SCC, SCCIS, and Actinic Keratosis.
+    \item \textbf{Benign:} Nevi, Seborrheic Keratosis, Lentigo, and Dermatofibroma.
+    \end{itemize}
+\item Metadata: Age, Sex, Lesion location, and Fitzpatrick skin type.
+\end{itemize}
+
+\textbf{Robustness Dataset: ISIC-DICM-17K}
+
+\begin{itemize}
+\item Used for testing/generalization experiments.
+\item Harmonized to the same binary (Malignant vs. Benign) labels to ensure cross-dataset compatibility.
+\end{itemize}
+
+
+\section*{Model Configurations}
+
+\textbf{1. Image-only model}
+\begin{itemize}
+\item Architecture: CNN (Backbone: \textbf{ResNet-50} preferred for CRP compatibility).
+\item Output: Binary classification.
+\end{itemize}
+
+\textbf{2. Metadata-only model}
+\begin{itemize}
+\item Architecture: Multi-Layer Perceptron (MLP).
+\item Input: Encoded categorical and continuous clinical features.
+\end{itemize}
+
+\textbf{3. Multimodal model (Late Fusion)}
+\begin{itemize}
+\item Feature extraction from both branches followed by concatenation and a final classification head.
+\end{itemize}
+
+
+\section*{Explainability and Visualization}
+
+\textbf{Image and Multimodal Explainability}
+\begin{itemize}
+\item \textbf{Grad-CAM:} To identify coarse regions of visual interest and provide a baseline for spatial attention.
+\item \textbf{Concept Relevance Propagation (CRP):} As an advanced possibility, we will investigate CRP to decompose predictions into dermatological concepts. This allows us to quantify if metadata "excites" specific visual features (e.g., does "Advanced Age" increase the relevance of "Irregular Network" structures?).
+\end{itemize}
+
+\textbf{Metadata Influence Analysis (Advanced Possibilities)}
+\begin{itemize}
+\item \textbf{SHAP (Shapley Additive Explanations):} To determine the global and local contribution of each metadata feature (Age, Sex, Site) to the final diagnostic probability.
+\item \textbf{Counterfactual Explanations (What-If Analysis):} We plan to systematically perturb metadata values (e.g., changing a patient's age from 20 to 80) while keeping the image constant. This identifies the "Switch Point" where metadata overrides visual evidence.
+\item \textbf{Integrated Gradients (IG):} To calculate a \textit{Modality Importance Ratio}, quantifying the exact balance of power between the image branch and the metadata branch for specific classes like Melanoma.
+\end{itemize}
+
+
+\section*{Experiments}
+
+\textbf{Experiment 1: Binary Model Comparison}
+\begin{itemize}
+\item Compare Image-only, Metadata-only, and Multimodal performance using Accuracy, F1-Score, and ROC-AUC.
+\end{itemize}
+
+\textbf{Experiment 2: Metadata Sensitivity and Ablation}
+\begin{itemize}
+\item Analyze how the model's reliance on images shifts when metadata is withheld or systematically modified (Counterfactual testing).
+\end{itemize}
+
+\textbf{Experiment 3: Cross-dataset Robustness}
+\begin{itemize}
+\item Evaluate the performance drop when moving from MIDAS to ISIC-DICM-17K \cite{isicdicm17k2023}, testing if multimodal features provide more stability than image-only features.
+\end{itemize}
+
+
+\section*{Expected Deliverables}
+\begin{itemize}
+\item Binary classification pipeline for MIDAS and ISIC datasets.
+\item Comparison of Grad-CAM vs. CRP heatmaps.
+\item 3-page project report and 5-minute presentation.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{M335}
+
+\end{document}
