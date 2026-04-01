@@ -20,13 +20,13 @@ train_transforms = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomVerticalFlip(),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    transforms.Normalize(mean=[0.5], std=[0.5]),
 ])
 
 val_transforms = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    transforms.Normalize(mean=[0.5], std=[0.5]), # adjust mean/std if needed (currently set to [0.5] for grayscale images; change to ImageNet stats if using pretrained models on RGB)
 ])
 train_ds = MIDASDataset(file_path=TRAIN_PATH, image_root=IMG_ROOT, transform=train_transforms, is_training=True)
 val_ds   = MIDASDataset(file_path=VAL_PATH,   image_root=IMG_ROOT, transform=val_transforms, is_training=False) 
