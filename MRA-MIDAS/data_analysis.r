@@ -1,12 +1,15 @@
 # download data
 library(readxl)
-data <- read_excel("MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/release_midas.xlsx")
+data <- read_excel("Data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/release_midas.xlsx")
 
 View(data)
 
 data_classified <- data[!is.na(data$midas_path), ]
 data_unclassified <- data[is.na(data$midas_path), ]
 
+# Eva Add
+unclassified_notassed <- data_unclassified[is.na(data_unclassified$clinical_impression_1), ]
+View(unclassified_notassed)
 
 # benign = 0, malignant = 1
 data_classified$binary_label <- ifelse(grepl("malignant", data_classified$midas_path, ignore.case = TRUE), 1, 0)
@@ -21,6 +24,7 @@ print(paste("number of benign patients:", nrow(benign)))
 print(paste("number of malignant patients:", nrow(malignant)))
 print(paste("number of unclassified patients:", nrow(data_unclassified)))
 print(paste("number of patients (all):", nrow(data)))
+
 
 
 
