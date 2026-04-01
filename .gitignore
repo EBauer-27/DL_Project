@@ -14,3 +14,14 @@
 *.vrb
 *.gz
 Data/
+*.csv
+*.xls
+*.xlsx
+*.jpg
+*.jpeg
+*.png
+__pycache__/
+*.py[cod]
+*.pyo
+*.ipynb_checkpoints/
+.DS_Store

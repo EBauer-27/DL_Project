@@ -1,0 +1,1 @@
+"""Empty script to run the tabular transformer pipeline end-to-end, for testing purposes. The actual training code is in tab_transformer_train.py, which is called by this script."""

@@ -1,0 +1,1 @@
+"""Empty script to run the multimodal pipeline end-to-end, for testing purposes. The actual training code is in resnet_train.py and gpt2_train.py, which are called by this script."""
