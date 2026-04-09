@@ -1,0 +1,125 @@
+\documentclass{article}
+
+\usepackage[final]{project_nips_style}
+
+% =========================
+% Packages
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath, amsfonts}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+
+% =========================
+% Title Information
+% =========================
+\title{Multimodal Skin Lesion Classification: Investigating the Influence of Metadata on Model Decision-Making}
+
+\author{
+  Eva Bauer \\
+  University of Bern \\
+  \texttt{eva.bauer@students.unibe.ch}
+  \And
+   Alexandra Benova \\
+  University of Bern \\
+  \texttt{alexandra.benova@students.unibe.ch}
+   \And
+   Nina Fröhlich \\
+  University of Bern \\
+  \texttt{nina.froehlich@students.unibe.ch}
+}
+
+\begin{document}
+
+\maketitle
+
+
+\vspace{0.5em}
+
+
+% ============================================================
+\section{Introduction and Background}
+% ============================================================
+
+Skin cancer is one of the most common cancer types around the world, which makes exploring it so crucial,
+as also early detection makes a big difference in treatment chances \cite{watson2026}.
+A more recent approach to image-based prediction models is the use of multimodal data, which provides a more detailed
+view on the samples and improves diagnosis and treatment \cite{hao2025}. In oncology, multimodal approaches enhance tumor
+characterization and enable more personalized treatment planning \cite{hao2025}. 
+Here we investigated how patient metadata influences the model decision-making specifically in skin lesion
+classification. We compared image-only, metadata-only and multimodal models and compared their performance.
+We analyzed which metadata features contribute most to predictions and how they alter visual attention.
+To do so, we used advanced explainability techniques (Grad-CAM and CRP) to visualize the model attention and
+feature relevance.
+
+
+% ============================================================
+\section{Method}
+% ============================================================
+\subsection{Model Architecture}
+
+Our model combines dermoscopic images and patient metadata using a multimodal architecture consisting of three main components: an image encoder, a metadata encoder, and a fusion module.
+
+For the image encoder, we used a convolutional neural network (CNN) (ResNet \cite{he2016resnet}), since CNNs perform well on smaller datasets and are effective at capturing local texture patterns in skin lesions \cite{esteva2017dermatologist}. The input image is mapped to a latent feature vector representing relevant visual characteristics such as asymmetry, border irregularity, and color variation.
+
+The metadata (e.g. age, sex, anatomical site, skin type) is processed using a TabTransformer \cite{huang2020tabtransformer}. Each feature is treated as an individual token and embedded into a vector space. Self-attention layers are then applied to model relationships between features, allowing the model to capture dependencies such as how age interacts with lesion location.
+
+To combine both modalities, we use a cross-attention mechanism instead of simple concatenation. This allows the image features to dynamically attend to relevant metadata. Following the standard attention formulation \cite{vaswani2017attention}, the image embedding is used as the query (Q), while metadata embeddings are used as keys (K) and values (V). This results in a weighted combination of metadata features conditioned on the image. The fused representation is then passed to a small MLP for binary classification (malignant vs. benign).
+
+An advantage of this approach is its inherent explainability. The attention weights can be extracted to quantify how much each metadata feature contributes to a specific prediction. In addition, we apply Grad-CAM \cite{selvaraju2017gradcam} to visualize the image regions that are most relevant for the model decision.
+
+The model is trained using binary cross-entropy loss and the Adam optimizer \cite{kingma2014adam}. To improve generalization, we apply standard data augmentation and dropout.
+
+
+\subsection{Training Setup}
+
+\textbf{Dataset} \
+For our analysis we used the Melanoma Research Alliance Multimodal Image Dataset (MRA-MIDAS) \cite{midas2023}. It represents the first publicly available dataset with prospectively collected and systematically paired dermoscopic and clinical images covering multiple skin lesion types \cite{midas2023}. The dataset includes 3216 images and metadata from 733 patients and is relatively balanced between benign (1500) and malignant (1419) cases.
+
+The metadata contains patient-level information such as age, ethnicity, and sex, as well as lesion-specific attributes including size, anatomical location, and textual descriptions. Ground-truth labels are provided via “midas\_path”, and up to three additional clinical impressions are available per sample.
+
+We performed binary classification into malignant (=1) and benign (=0) based on the “midas\_path” labels. The labeled data was split into training, validation, and test sets (80\%-10\%-10\%). Additionally, 497 samples without ground-truth labels were used as an external test set, where ‘clinical\_impression\_1’ served as a proxy label.
+
+
+\subsection{Implementation Details}
+
+All models were initialized with ImageNet-pretrained weights for the image encoder. Images were resized and augmented using standard techniques such as random flipping, rotation, and color jitter to improve generalization.
+
+For the metadata, categorical features were embedded and numerical features were normalized before being passed to the TabTransformer. During training, dropout was applied to reduce overfitting.
+
+We used the Adam optimizer with a fixed learning rate and trained the models for a predefined number of epochs, selecting the best model based on validation performance.
+
+
+% ============================================================
+\section{Results}
+% ============================================================
+
+
+
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+\newpage
+{\small
+\bibliographystyle{plainnat}
+\bibliography{references}
+}
+
+% ============================================================
+\appendix
+% ============================================================
+
+\newpage
+\section{Appendix (Optional)}
+
+
+
+\end{document}
