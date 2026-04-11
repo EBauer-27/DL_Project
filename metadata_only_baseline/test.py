@@ -12,7 +12,7 @@ BATCH_SIZE = 32
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
+#python -m metadata_only_baseline.test
 def main():
     # Load checkpoint dict
     checkpoint = torch.load(MODEL_PATH, map_location=device, weights_only=False)
