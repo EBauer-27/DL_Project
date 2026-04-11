@@ -6,6 +6,7 @@ import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
 from typing import Optional, Dict, List
+from torchvision import transforms
 
 
 class MIDASDataset(Dataset):
@@ -32,6 +33,7 @@ class MIDASDataset(Dataset):
         """
         self.image_root = image_root
         self.transform = transform
+        self.to_tensor = transforms.ToTensor()
         self.is_training = is_training
 
         # Preprocessing artifacts
@@ -136,12 +138,17 @@ class MIDASDataset(Dataset):
         # Load image
         row = self.df.iloc[idx]
         img_path = self._create_local_path(row)
+
         if img_path and os.path.exists(img_path):
-            image = Image.open(img_path).convert('RGB')
+            with Image.open(img_path) as img:
+                image = img.convert('RGB')
         else:
             image = Image.new('RGB', (224, 224), color='black')
-        if self.transform:
+
+        if self.transform is not None:
             image = self.transform(image)
+        else:
+            image = self.to_tensor(image)
 
         # Tabular data
         if self.feature_columns is None:
