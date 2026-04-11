@@ -163,12 +163,6 @@ class MIDASDataset(Dataset):
 
         return {'image': image, 'tabular': tabular_data, 'label': label}
 
-
-
-
-
-
-
 class MIDASTabularDataset(Dataset):
     def __init__(
         self,
