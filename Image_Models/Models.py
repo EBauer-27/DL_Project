@@ -35,3 +35,37 @@ class ResNet18(nn.Module):
         out = self.out(hidden)
         return out 
 
+
+class GoogLeNet(nn.Module):
+    def __init__(self, out_dim=1):
+        super().__init__()
+
+        self.googleNet = torchvision.models.googlenet(weights='DEFAULT')
+
+        self.hidden = torch.nn.Sequential(*(list(self.googleNet.children())[:-1]))
+
+        fc_dim = self.googleNet.fc.in_features
+
+        # Output Layer with Sigmoid activation  
+        self.out = torch.nn.Sequential(nn.Flatten(),
+                                       nn.Linear(fc_dim, out_dim))
+        
+
+    def forward(self, x):
+        hidden = self.hidden(x)
+        out = self.out(hidden)
+        return out
+
+class VggNet(nn.Module):
+    def __init__(self, out_dim=1):
+        super().__init__()
+
+        self.vggNet = torchvision.models.vgg16(weights='DEFAULT')
+        in_features = self.vggNet.classifier[-1].in_features 
+        self.vggNet.classifier[-1] = nn.Linear(in_features, out_dim)
+        
+
+    def forward(self, x):
+        out = self.vggNet(x)
+        return out
+        
