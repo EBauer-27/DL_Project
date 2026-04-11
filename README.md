@@ -10,6 +10,7 @@ DL_Project — quick overview
 	  - `python -m data_processing.split <master.xlsx> <image_root> --out_dir manifests`
   2. Quick dataset check:
 	  - `python -m training_scripts.tets`
+  3. Run image_cache.py to resize images before running the dataloader
 
 - Notes:
   - Do NOT commit raw data or `__pycache__`; `.gitignore` is configured.
