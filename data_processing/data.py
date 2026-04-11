@@ -162,3 +162,147 @@ class MIDASDataset(Dataset):
         label = torch.tensor(self.df['label'].iloc[idx]).float()
 
         return {'image': image, 'tabular': tabular_data, 'label': label}
+
+
+
+
+
+
+
+class MIDASTabularDataset(Dataset):
+    def __init__(
+        self,
+        file_path: str,
+        is_training: bool = True,
+        scaler: Optional[StandardScaler] = None,
+        fit_scaler: bool = False,
+        cat_maps: Optional[Dict[str, List[str]]] = None,
+    ):
+        self.is_training = is_training
+        self.scaler = scaler
+        self.cat_maps = cat_maps or {}
+
+        self.categorical_cols = []
+        self.continuous_cols = []
+        self.categories = ()
+        self.num_continuous = 0
+
+        if file_path.endswith(".xlsx"):
+            self.df = pd.read_excel(file_path)
+        else:
+            self.df = pd.read_csv(file_path)
+
+        self.df = self._create_label_column(self.df)
+        self.df = self._preprocess_tabular(self.df, fit_scaler=fit_scaler)
+
+    def _create_label_column(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.copy()
+        danger_words = ['melanoma', 'bcc', 'scc', 'carcinoma', 'malignant', 'mct', 'ak']
+        midas = df.get('midas_path')
+
+        if midas is None:
+            df["label"] = 0
+            return df
+
+        label_df = midas.fillna("").astype(str).str.lower()
+        df["label"] = label_df.apply(
+            lambda x: 1 if any(word in x for word in danger_words) else 0
+        )
+        return df
+
+    def _preprocess_tabular(self, df: pd.DataFrame, fit_scaler: bool = False) -> pd.DataFrame:
+        df = df.copy()
+
+        exclude_cols = {
+                "midas_path",
+                "midas_file_name",
+                "label",
+                "Unnamed: 0",
+                "midas_record_id",
+                "group_id",
+                "midas_pathreport",
+                "clinical_impression_1",
+                "clinical_impression_2",
+                "clinical_impression_3",
+                "midas_melanoma",
+            }
+
+        object_cols = [c for c in df.select_dtypes(include=["object"]).columns if c not in exclude_cols]
+        numeric_cols = [c for c in df.select_dtypes(include=[np.number]).columns if c not in exclude_cols]
+
+        if object_cols:
+            df[object_cols] = df[object_cols].fillna("")
+        if numeric_cols:
+            df[numeric_cols] = df[numeric_cols].fillna(0)
+
+        categorical_cols = []
+        continuous_cols = numeric_cols.copy()
+
+        for col in object_cols:
+            ser = df[col].astype(str).str.strip()
+            lower = ser.str.lower()
+
+            is_binary_like = lower.isin(
+                ["yes", "no", "y", "n", "true", "false", "0", "1"]
+            ).all()
+
+            if is_binary_like:
+                df[col] = lower.replace({
+                    "yes": 1, "y": 1, "true": 1, "1": 1,
+                    "no": 0, "n": 0, "false": 0, "0": 0
+                }).astype(np.float32)
+                continuous_cols.append(col)
+            else:
+                if col in self.cat_maps:
+                    cats = self.cat_maps[col]
+                    cat = pd.Categorical(ser, categories=cats)
+                else:
+                    cat = pd.Categorical(ser)
+                    self.cat_maps[col] = list(cat.categories)
+
+                # shift by +1 so 0 is reserved for unknown/unseen
+                df[col] = (cat.codes + 1).astype(np.int64)
+                categorical_cols.append(col)
+
+        if continuous_cols:
+            if fit_scaler:
+                self.scaler = StandardScaler()
+                df[continuous_cols] = self.scaler.fit_transform(df[continuous_cols])
+            elif self.scaler is not None:
+                df[continuous_cols] = self.scaler.transform(df[continuous_cols])
+            else:
+                self.scaler = StandardScaler()
+                df[continuous_cols] = self.scaler.fit_transform(df[continuous_cols])
+
+        self.categorical_cols = categorical_cols
+        self.continuous_cols = continuous_cols
+        self.categories = tuple(int(df[col].max()) + 1 for col in self.categorical_cols)
+        self.num_continuous = len(self.continuous_cols)
+
+        return df
+
+    def __len__(self):
+        return len(self.df)
+
+    def __getitem__(self, idx):
+        row = self.df.iloc[idx]
+
+        if self.categorical_cols:
+            x_categ = torch.tensor(
+                row[self.categorical_cols].values.astype(np.int64),
+                dtype=torch.long
+            )
+        else:
+            x_categ = torch.empty(0, dtype=torch.long)
+
+        if self.continuous_cols:
+            x_cont = torch.tensor(
+                row[self.continuous_cols].values.astype(np.float32),
+                dtype=torch.float32
+            )
+        else:
+            x_cont = torch.empty(0, dtype=torch.float32)
+
+        label = torch.tensor(row["label"], dtype=torch.float32)
+
+        return x_categ, x_cont, label
