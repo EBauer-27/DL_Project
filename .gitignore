@@ -26,3 +26,9 @@ __pycache__/
 *.ipynb_checkpoints/
 .DS_Store
 *.pth
+*optuna_db/
+*Tensorboard/
+*checkpoints_opt/*.pt
+!checkpoints_opt/trial_6.pt
+!checkpoints_opt/trial_10.pt
+!checkpoints_opt/trial_23.pt
