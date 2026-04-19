@@ -28,7 +28,5 @@ __pycache__/
 *.pth
 *optuna_db/
 *Tensorboard/
-*checkpoints_opt/*.pt
-!checkpoints_opt/trial_6.pt
+*.pt
 !checkpoints_opt/trial_10.pt
-!checkpoints_opt/trial_23.pt
