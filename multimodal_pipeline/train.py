@@ -14,8 +14,8 @@ from metadata_only_baseline.utils import compute_metrics, set_seed
 # Config
 # ============================================================
 IMG_ROOT = "data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
-TRAIN_PATH = "manifests/train.csv"
-VAL_PATH = "manifests/val.csv"
+TRAIN_PATH = "manifests_record_split/train.csv"
+VAL_PATH = "manifests_record_split/val.csv"
 
 SAVE_DIR = "multimodal_pipeline/model"
 SAVE_PATH = os.path.join(SAVE_DIR, "best_multimodal_model.pth")
