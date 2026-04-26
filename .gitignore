@@ -31,3 +31,4 @@ dl/
 .venv/
 venv/
 MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/
+MRA-MIDAS/cache_images/
