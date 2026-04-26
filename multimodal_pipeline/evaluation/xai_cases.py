@@ -21,7 +21,7 @@ OUTPUT_DIR = "multimodal_pipeline/results/xai_cases"
 
 BATCH_SIZE = 16
 THRESHOLD = 0.5
-MAX_EXAMPLES_PER_GROUP = 15  # change to 2 or 3 if you want more per TP/TN/FP/FN
+MAX_EXAMPLES_PER_GROUP = 15
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -36,6 +36,20 @@ IMAGENET_STD = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1)
 def denormalize_image(img_tensor: torch.Tensor) -> torch.Tensor:
     img = img_tensor.detach().cpu() * IMAGENET_STD + IMAGENET_MEAN
     return img.clamp(0, 1)
+
+
+# ------------------------------------------------------------
+# File naming helper
+# ------------------------------------------------------------
+def make_safe_image_stem(file_name, fallback="unknown_image"):
+    if file_name is None:
+        return fallback
+    if isinstance(file_name, float) and np.isnan(file_name):
+        return fallback
+
+    stem = os.path.splitext(os.path.basename(str(file_name)))[0]
+    stem = stem.replace(" ", "_").replace("/", "_").replace("\\", "_")
+    return stem
 
 
 # ------------------------------------------------------------
@@ -108,10 +122,10 @@ class GradCAM:
         score = logits.view(-1)[0]
         score.backward(retain_graph=True)
 
-        grads = self.gradients[0]          # [C, H, W]
-        acts = self.activations[0]         # [C, H, W]
+        grads = self.gradients[0]
+        acts = self.activations[0]
 
-        weights = grads.mean(dim=(1, 2))   # [C]
+        weights = grads.mean(dim=(1, 2))
         cam = torch.zeros_like(acts[0])
 
         for c, w in enumerate(weights):
@@ -147,8 +161,6 @@ def overlay_cam_on_image(img_tensor: torch.Tensor, cam: np.ndarray, alpha: float
 
 # ------------------------------------------------------------
 # Local metadata importance by single-feature perturbation
-# For categorical features -> set to 0 (unknown token)
-# For continuous features -> set to 0.0 (mean after standardization)
 # ------------------------------------------------------------
 @torch.no_grad()
 def local_metadata_importance(model, image, x_categ, x_cont, feature_names, num_cat, device):
@@ -162,19 +174,17 @@ def local_metadata_importance(model, image, x_categ, x_cont, feature_names, num_
 
     deltas = []
 
-    # categorical
     for i in range(num_cat):
         x_cat_mod = x_categ_b.clone()
         x_cont_mod = x_cont_b.clone()
-        x_cat_mod[:, i] = 0  # unknown / masked
+        x_cat_mod[:, i] = 0
         prob = torch.sigmoid(model(image_b, x_cat_mod, x_cont_mod)).view(-1).item()
         deltas.append(baseline_prob - prob)
 
-    # continuous
     for j in range(x_cont.shape[0]):
         x_cat_mod = x_categ_b.clone()
         x_cont_mod = x_cont_b.clone()
-        x_cont_mod[:, j] = 0.0  # roughly mean after scaling
+        x_cont_mod[:, j] = 0.0
         prob = torch.sigmoid(model(image_b, x_cat_mod, x_cont_mod)).view(-1).item()
         deltas.append(baseline_prob - prob)
 
@@ -238,7 +248,6 @@ def select_cases(pred_df, max_per_group=1):
         if len(df) == 0:
             continue
 
-        # pick most confident examples within each group
         if name in ["TP", "FP"]:
             df = df.sort_values("prob", ascending=False)
         else:
@@ -285,7 +294,7 @@ def plot_case_figure(
     img_np, overlay_np, _ = overlay_cam_on_image(image, cam, alpha=0.4)
 
     feature_names = list(dataset.categorical_cols) + list(dataset.continuous_cols)
-    baseline_prob, local_imp_df = local_metadata_importance(
+    _, local_imp_df = local_metadata_importance(
         model=model,
         image=image,
         x_categ=x_categ,
@@ -390,7 +399,6 @@ def main():
     pred_df = collect_test_predictions(model, test_loader, device, threshold=THRESHOLD)
     pred_df.to_csv(os.path.join(OUTPUT_DIR, "test_predictions.csv"), index=False)
 
-    # assign case type for every sample so we can generate figures for the whole test set
     def _case_type(row):
         lab = int(row["label"])
         pr = int(row["pred"])
@@ -418,11 +426,14 @@ def main():
             case_type = row.get("case_type", "UNK")
             prob = row.get("prob", None)
 
-            out_name = f"{case_type}_idx{idx}" + (f"_p{prob:.3f}" if prob is not None else "") + ".png"
+            raw_row = test_ds.df.iloc[idx]
+            image_name = raw_row.get("midas_file_name", None)
+            image_stem = make_safe_image_stem(image_name, fallback=f"idx{idx}")
+
+            out_name = f"{case_type}_{image_stem}" + (f"_p{prob:.3f}" if prob is not None else "") + ".png"
             out_path = os.path.join(OUTPUT_DIR, out_name)
 
             try:
-                # ensure the row passed to plotting contains a case_type key
                 row_for_plot = row.copy()
                 row_for_plot["case_type"] = case_type
 
@@ -437,7 +448,6 @@ def main():
                 if (i + 1) % 50 == 0 or (i + 1) == total:
                     print(f"Saved {i+1}/{total}: {out_path}")
             except Exception as e:
-                # log and continue on individual sample failures
                 print(f"Failed to process idx={idx} (row={i}): {e}")
                 continue
     finally:
