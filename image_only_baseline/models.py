@@ -1,0 +1,1 @@
+# Contains the model architectures: ResNet18, VGG16, GoogLeNet.
