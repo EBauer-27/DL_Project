@@ -10,8 +10,8 @@ from torchvision import transforms
 import optuna
 
 from data_processing.data import MIDASDataset
-from Image_Models.Models import ResNet18, VggNet, GoogLeNet
-from Image_Models.train import Trainer
+from Image_Eva.Models import ResNet18, VggNet, GoogLeNet
+from Image_Eva.train import Trainer
 
 
 

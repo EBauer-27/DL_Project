@@ -11,7 +11,7 @@ from .multimodal import MultimodalSkinClassifier
 TEST_PATH = "manifests/test.csv"
 IMG_ROOT = "data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
 MODEL_PATH = "multimodal_pipeline/model/best_multimodal_model.pth"
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -85,6 +85,7 @@ def main():
     print(f"Accuracy:  {metrics['accuracy']:.4f}")
     print(f"Precision: {metrics['precision']:.4f}")
     print(f"Recall:    {metrics['recall']:.4f}")
+    print(f"F1:        {metrics['f1']:.4f}")
     print(f"AUC:       {metrics['auc']:.4f}")
 
 

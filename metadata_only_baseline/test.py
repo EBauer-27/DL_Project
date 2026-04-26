@@ -7,7 +7,7 @@ from .utils import compute_metrics
 from data_processing.data import MIDASTabularDataset
 
 TEST_PATH = "manifests/test.csv"
-MODEL_PATH = "metadata_only_baseline/best_tabtransformer.pth"
+MODEL_PATH = "metadata_only_baseline/model/best_tabtransformer.pth"
 BATCH_SIZE = 32
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -70,6 +70,7 @@ def main():
     print(f"Test Accuracy:  {metrics['accuracy']:.4f}")
     print(f"Test Precision: {metrics['precision']:.4f}")
     print(f"Test Recall:    {metrics['recall']:.4f}")
+    print(f"Test F1:        {metrics['f1']:.4f}")
     print(f"Test AUC:       {metrics['auc']:.4f}")
 
 

@@ -1,1 +1,0 @@
-#Preprocesses raw images once by converting them to RGB and resizing them to 224×224.
