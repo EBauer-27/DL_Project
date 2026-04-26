@@ -4,3 +4,10 @@ pandas
 numpy
 Pillow
 scikit-learn
+scipy==1.11.4
+matplotlib
+tqdm
+seaborn
+tab-transformer-pytorch
+tensorboard
+openpyxl

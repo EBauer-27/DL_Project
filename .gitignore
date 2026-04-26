@@ -27,3 +27,7 @@ __pycache__/
 *Tensorboard/
 *.pt
 !checkpoints_opt/trial_10.pt
+dl/
+.venv/
+venv/
+MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/

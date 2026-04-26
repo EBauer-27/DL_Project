@@ -1,6 +1,6 @@
 # download data
 library(readxl)
-data <- read_excel("Data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/release_midas.xlsx")
+data <- read_excel("midasmultimodalimagedatasetforaibasedskincancer/release_midas.xlsx")
 
 View(data)
 
