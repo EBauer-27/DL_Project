@@ -3,15 +3,15 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 from PIL import Image
-from torchvision import transforms
+from torchvision import transforms, models
 import cv2
-from Models import ResNet18, GoogLeNet, VggNet
 
 
-MODEL_PATH = "image_only_baseline/checkpoints_opt/trial_10.pt"
-MODEL_NAME = "resnet"
+MODEL_PATH = "image_only_baseline/model/best_image_only_model.pth"
+MODEL_NAME = "resnet18"
 
 IMAGE_DIR = "MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
 LABEL_CSV_PATH = "manifests_record_split/test.csv"
@@ -44,6 +44,9 @@ class GradCAM:
 
         logits = self.model(input_tensor)
 
+        if logits.ndim == 1:
+            logits = logits.unsqueeze(1)
+
         if logits.shape[1] == 1:
             target_score = logits[0, 0] if class_idx == 1 else -logits[0, 0]
         else:
@@ -67,18 +70,34 @@ class GradCAM:
         return gradcam
 
 
+class WrappedResNet(nn.Module):
+    def __init__(self, dropout=0.2):
+        super().__init__()
+
+        self.backbone = models.resnet18(weights=None)
+        in_features = self.backbone.fc.in_features
+
+        self.backbone.fc = nn.Sequential(
+            nn.Dropout(dropout),
+            nn.Linear(in_features, 1)
+        )
+
+    def forward(self, x):
+        return self.backbone(x)
+
+
 def load_model(model_path, model_name, device):
-    if model_name == "resnet":
-        model = ResNet18()
-    elif model_name == "googlenet":
-        model = GoogLeNet()
-    elif model_name == "vggnet":
-        model = VggNet()
+    checkpoint = torch.load(model_path, map_location=device)
+
+    config = checkpoint.get("config", {})
+    dropout = config.get("dropout", 0.2)
+
+    if model_name == "resnet18":
+        model = WrappedResNet(dropout=dropout)
     else:
         raise ValueError(f"Unknown model: {model_name}")
 
-    state_dict = torch.load(model_path, map_location=device)
-    model.load_state_dict(state_dict)
+    model.load_state_dict(checkpoint["model_state_dict"])
     model = model.to(device)
     model.eval()
 
@@ -86,12 +105,8 @@ def load_model(model_path, model_name, device):
 
 
 def get_target_layer(model, model_name):
-    if model_name == "resnet":
-        return model.resnet.layer4[-1].conv2
-    elif model_name == "googlenet":
-        return model.googleNet.inception5b.branch2[-1]
-    elif model_name == "vggnet":
-        return model.vggNet.features[-1]
+    if model_name == "resnet18":
+        return model.backbone.layer4[-1].conv2
     else:
         raise ValueError(f"Unknown model: {model_name}")
 
@@ -216,6 +231,9 @@ def process_image(model, gradcam_handler, image_path, ground_truth_label, device
     with torch.no_grad():
         logits = model(input_tensor)
 
+        if logits.ndim == 1:
+            logits = logits.unsqueeze(1)
+
     if logits.shape[1] == 1:
         prob_malignant = torch.sigmoid(logits[0, 0]).item()
         pred_idx = 1 if prob_malignant > 0.5 else 0
@@ -226,7 +244,6 @@ def process_image(model, gradcam_handler, image_path, ground_truth_label, device
         confidence = probs[0, pred_idx].item()
 
     pred_label = class_names[pred_idx]
-
     confusion_type = get_confusion_type(ground_truth_label, pred_label)
 
     gradcam_heatmap = gradcam_handler.generate(input_tensor, pred_idx)
