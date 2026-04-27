@@ -4,14 +4,15 @@ from itertools import product
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from torch.utils.tensorboard import SummaryWriter
-from torch.utils.tensorboard.summary import hparams
-from torchvision import transforms
+#from torch.utils.tensorboard import SummaryWriter
+#from torch.utils.tensorboard.summary import hparams
+#from torchvision import transforms
 import optuna
 
 from data_processing.data import MIDASDataset
 from image_only_baseline.models import create_model
 from image_only_baseline.trainer import Trainer
+import image_only_baseline.utils as ult
 
 
 
@@ -36,19 +37,21 @@ IMG_ROOT = 'data/MRA-MIDAS/midas_224_cache/'
 TRAIN_PATH = 'manifests_record_split/train.csv'
 VAL_PATH   = 'manifests_record_split/val.csv'
 
-train_transforms = transforms.Compose([
-    transforms.RandomHorizontalFlip(),
-    transforms.RandomVerticalFlip(),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-])
+#train_transforms = transforms.Compose([
+#    transforms.RandomHorizontalFlip(),
+#    transforms.RandomVerticalFlip(),
+#    transforms.ToTensor(),
+#    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+#])
 
 
 
-val_transforms = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]), 
-])
+#val_transforms = transforms.Compose([
+#    transforms.ToTensor(),
+#    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]), 
+#])
+
+train_transforms, val_transforms = ult.get_image_transforms()
 
 def objective(trial):
     model_name = trial.suggest_categorical('model_name', ['resnet18', 'resnet50', 'googlenet', 'vgg16'])
@@ -64,7 +67,7 @@ def objective(trial):
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     criterion = nn.BCEWithLogitsLoss()
 
-    trainer = trainer(
+    trainer = Trainer(
             model=model,
             train_loader=train_loader,
             valid_loader=val_loader,
@@ -81,7 +84,7 @@ def objective(trial):
     trial.set_user_attr("final_val_auc", history["val_auc"][-1])
     trial.set_user_attr("final_val_f1", history["val_f1"][-1])
     trial.set_user_attr("final_val_acc", history["val_acc"][-1])
-    trial.set_user_attr("final_val_pres", history["val_pres"][-1])
+    trial.set_user_attr("final_val_pres", history["val_precision"][-1])
 
     os.makedirs('Image_Models/checkpoints_opt', exist_ok=True)
     best_model_path = f"Image_Models/checkpoints_opt/trial_{trial.number}.pt"
@@ -98,7 +101,7 @@ if __name__ == '__main__':
                                 load_if_exists=True,
                                 direction='maximize',
                                 pruner=optuna.pruners.MedianPruner(n_startup_trials=5,
-                                                                   n_warmup_steps=5),
+                                                                   n_warmup_steps=2),
                                 )
     
     #study.optimize(objective, n_trials=20, show_progress_bar=False)
