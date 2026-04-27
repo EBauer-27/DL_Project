@@ -10,22 +10,9 @@ from torchvision import transforms
 import optuna
 
 from data_processing.data import MIDASDataset
-from image_only_baseline.models import ResNet18, VggNet, GoogLeNet
-from image_only_baseline.models import Trainer
+from image_only_baseline.models import create_model
+from image_only_baseline.trainer import Trainer
 
-
-
-## CHECK OPTUNA !!!!!
-
-def build_model(model_name):
-    if model_name == 'resnet':
-        return ResNet18()
-    elif model_name == 'googlenet':
-        return GoogLeNet()
-    elif model_name == 'vggnet':
-        return VggNet()
-    else:
-        raise ValueError(f'Unknown model: {model_name}')
 
 
 def data_loaders(train_path, val_path, img_root, train_tf, val_tf, batch_size):
@@ -64,7 +51,7 @@ val_transforms = transforms.Compose([
 ])
 
 def objective(trial):
-    model_name = trial.suggest_categorical('model_name', ['resnet', 'googlenet', 'vggnet'])
+    model_name = trial.suggest_categorical('model_name', ['resnet18', 'resnet50', 'googlenet', 'vgg16'])
     lr = trial.suggest_float('lr', 1e-5, 1e-3, log=True)
     batch_size = trial.suggest_categorical('batch_size', [32, 64])
     weight_decay = trial.suggest_float('weight_decay', 1e-6, 1e-3, log=True)
@@ -72,19 +59,19 @@ def objective(trial):
     epochs = 50
 
     train_loader, val_loader = data_loaders(TRAIN_PATH, VAL_PATH, IMG_ROOT, train_transforms, val_transforms, batch_size=batch_size)
-    model = build_model(model_name)
+    model = create_model(model_name)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     criterion = nn.BCEWithLogitsLoss()
 
-    trainer = Trainer(
+    trainer = trainer(
             model=model,
             train_loader=train_loader,
             valid_loader=val_loader,
             criterion=criterion,
             optimizer=optimizer,
             end_epoch=epochs,
-            trail=trial.number
+            save=True
         )
     
     history = trainer.fit(trial=trial)
@@ -130,6 +117,6 @@ if __name__ == '__main__':
         print(f"  {k}: {v}")
 
 
-# Test also on F1, Precision, Sensitivity, Accuracy, ... 
+
 
 
