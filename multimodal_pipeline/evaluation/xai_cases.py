@@ -14,12 +14,12 @@ from data_processing.data import MIDASMultimodalDataset
 from multimodal_pipeline.multimodal import MultimodalSkinClassifier
 
 
-TEST_PATH = "manifests/test.csv"
+TEST_PATH = "manifests_record_split/test.csv"
 IMG_ROOT = "data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
-MODEL_PATH = "multimodal_pipeline/model/best_multimodal_model.pth"
-OUTPUT_DIR = "multimodal_pipeline/results/xai_cases"
+MODEL_PATH = "multimodal_pipeline/model/best_multimodal_model_resnet18.pth"
+OUTPUT_DIR = "multimodal_pipeline/results/xai_cases_resnet18"
 
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 THRESHOLD = 0.5
 MAX_EXAMPLES_PER_GROUP = 15
 

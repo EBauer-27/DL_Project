@@ -18,17 +18,21 @@ TRAIN_PATH = "manifests_record_split/train.csv"
 VAL_PATH = "manifests_record_split/val.csv"
 
 SAVE_DIR = "multimodal_pipeline/model"
-SAVE_PATH = os.path.join(SAVE_DIR, "best_multimodal_model.pth")
+SAVE_PATH = os.path.join(SAVE_DIR, "best_multimodal_model_resnet18.pth")
 
-BATCH_SIZE = 32
-EPOCHS = 20
-LR = 4.377982870865037e-05
-WEIGHT_DECAY = 4.967600193908121e-05
+BATCH_SIZE = 32 #16
+EPOCHS = 40
+LR = 4.377982870865037e-05 #0.0004247242264441804
+WEIGHT_DECAY = 4.967600193908121e-05 #1.654854564259684e-06
 SEED = 42
 NUM_WORKERS = 0
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+if torch.cuda.is_available():
+    DEVICE = torch.device("cuda")
+elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+    DEVICE = torch.device("mps")
+else:
+    DEVICE = torch.device("cpu")
 
 
 # ============================================================
