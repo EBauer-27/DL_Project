@@ -1,0 +1,463 @@
+Unnamed: 0,midas_record_id,midas_file_name,midas_iscontrol,midas_distance,midas_location,midas_path,midas_pathreport,midas_gender,midas_age,midas_fitzpatrick,midas_melanoma,midas_ethnicity,midas_race,clinical_impression_1,clinical_impression_2,clinical_impression_3,length_(mm),width_(mm),label
+10,3,s-prd-396524711.jpeg,yes,n/a - virtual,left forearm,,,female,68,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,,,5.0,3.0,0
+11,3,s-prd-396524710.jpeg,yes,n/a - virtual,left forearm,,,female,68,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,,,5.0,3.0,0
+15,5,s-prd-444577743.jpeg,yes,n/a - virtual,r forehead,,,male,72,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,2-benign-seborrheic keratosis,7-malignant-bcc,5.0,4.0,0
+21,5,s-prd-401874188.jpg,yes,6in,l dorsal hand ,,,male,72,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,3.0,5.0,0
+22,5,s-prd-401874100.jpg,yes,1ft,l dorsal hand ,,,male,72,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,3.0,5.0,0
+23,5,s-prd-401874606.jpg,yes,dscope,l dorsal hand ,,,male,72,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,3.0,5.0,0
+33,7,s-prd-401899307.jpg,yes,6in,forehead,,,male,41,"ii fair skin, blue eyes",no,no,white,3-benign-fibrous papule,,,1.5,1.5,0
+34,7,s-prd-401899753.jpg,yes,dscope,forehead,,,male,41,"ii fair skin, blue eyes",no,no,white,3-benign-fibrous papule,,,1.5,1.5,0
+35,8,s-prd-401918945.jpg,yes,6in,l ear,,,male,87,iii darker white skin,yes,no,white,8-malignant-scc,6-benign-other,7-malignant-bcc,4.0,4.0,0
+36,8,s-prd-401918839.jpg,yes,1ft,l ear,,,male,87,iii darker white skin,yes,no,white,8-malignant-scc,6-benign-other,7-malignant-bcc,4.0,4.0,0
+37,8,s-prd-401919248.jpg,yes,dscope,l ear,,,male,87,iii darker white skin,yes,no,white,8-malignant-scc,6-benign-other,7-malignant-bcc,4.0,4.0,0
+44,10,s-prd-404419291.jpg,yes,1ft,l medial ankle,,,male,40,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,15.0,8.0,0
+45,10,s-prd-404419384.jpg,yes,6in,l medial ankle,,,male,40,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,15.0,8.0,0
+46,10,s-prd-404419652.jpg,yes,dscope,l medial ankle,,,male,40,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,15.0,8.0,0
+47,12,s-prd-537596233.jpeg,yes,n/a - virtual,l cheek,,,male,71,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+48,12,s-prd-537596237.jpeg,yes,n/a - virtual,l cheek,,,male,71,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+49,12,s-prd-537596236.jpeg,yes,n/a - virtual,l cheek,,,male,71,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+50,12,s-prd-618886196.jpeg,yes,n/a - virtual,l forearm,,,male,71,"ii fair skin, blue eyes",no,no,white,9-malignant-sccis,10-malignant-ak,8-malignant-scc,8.0,6.0,0
+51,12,s-prd-404488527.jpg,yes,6in,l forehead,,,male,71,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,5.0,5.0,0
+52,12,s-prd-404488412.jpg,yes,1ft,l forehead,,,male,71,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,5.0,5.0,0
+53,12,s-prd-404488684.jpg,yes,dscope,l forehead,,,male,71,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,5.0,5.0,0
+56,13,s-prd-404492595.jpg,yes,1ft,mid scalp,,,male,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,12.0,10.0,0
+57,13,s-prd-404492748.jpg,yes,6in,mid scalp,,,male,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,12.0,10.0,0
+58,13,s-prd-404493493.jpg,yes,dscope,mid scalp,,,male,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,12.0,10.0,0
+99,15,s-prd-404889488.jpeg,yes,n/a - virtual,l forearm,,,female,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,8.0,6.0,0
+100,15,s-prd-404889489.jpeg,yes,n/a - virtual,l forearm,,,female,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,8.0,6.0,0
+101,16,s-prd-398170393.jpeg,yes,n/a - virtual,l upper back,,,male,41,iii darker white skin,no,yes,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,5-benign-hemangioma,8.0,6.0,0
+102,16,s-prd-408860691.jpg,yes,6in,l upper back,,,male,41,iii darker white skin,no,yes,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,5-benign-hemangioma,8.0,6.0,0
+103,16,s-prd-408860180.jpg,yes,1ft,l upper back,,,male,41,iii darker white skin,no,yes,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,5-benign-hemangioma,8.0,6.0,0
+104,16,s-prd-408862011.jpg,yes,dscope,l upper back,,,male,41,iii darker white skin,no,yes,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,5-benign-hemangioma,8.0,6.0,0
+113,18,s-prd-408907330.jpg,yes,1ft,l cheek,,,male,63,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,4.0,4.0,0
+114,18,s-prd-408907431.jpg,yes,6in,l cheek,,,male,63,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,4.0,4.0,0
+115,18,s-prd-408907577.jpg,yes,dscope,l cheek,,,male,63,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,4.0,4.0,0
+116,19,s-prd-408912642.jpg,yes,6in,l antihelix,,,female,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,6.0,4.0,0
+117,19,s-prd-408912537.jpg,yes,1ft,l antihelix,,,female,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,6.0,4.0,0
+118,19,s-prd-408912840.jpg,yes,dscope,l antihelix,,,female,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,,,6.0,4.0,0
+128,21,s-prd-408926819.jpg,yes,1ft,r elbow,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+129,21,s-prd-408926888.jpg,yes,6in,r elbow,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+130,21,s-prd-408927318.jpg,yes,dscope,r elbow,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+131,22,s-prd-409336924.jpg,yes,1ft,l lateral thigh,,,male,53,iv light brown skin,no,no,asian,2-benign-seborrheic keratosis,,,10.0,10.0,0
+132,22,s-prd-409336996.jpg,yes,6in,l lateral thigh,,,male,53,iv light brown skin,no,no,asian,2-benign-seborrheic keratosis,,,10.0,10.0,0
+133,22,s-prd-409337135.jpg,yes,dscope,l lateral thigh,,,male,53,iv light brown skin,no,no,asian,2-benign-seborrheic keratosis,,,10.0,10.0,0
+143,24,s-prd-411354878.jpg,yes,1ft,r forehead,,,male,57,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,2.0,2.0,0
+144,24,s-prd-411355094.jpg,yes,6in,r forehead,,,male,57,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,2.0,2.0,0
+145,24,s-prd-411355218.jpg,yes,dscope,r forehead,,,male,57,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,2.0,2.0,0
+146,25,s-prd-401610783.jpeg,yes,n/a - virtual,r upper back,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+147,25,s-prd-401610786.jpeg,yes,n/a - virtual,r upper back,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+148,25,s-prd-411387970.jpg,yes,1ft,r upper back,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+149,25,s-prd-411388067.jpg,yes,6in,r upper back,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+150,25,s-prd-411388374.jpg,yes,dscope,r upper back,,,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+161,27,s-prd-411757546.jpg,yes,6in,r forehead,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+162,27,s-prd-411757432.jpg,yes,1ft,r forehead,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+163,27,s-prd-411757764.jpg,yes,dscope,r forehead,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+166,27,s-prd-411758544.jpg,yes,1ft,r upper back ,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+167,27,s-prd-411758706.jpg,yes,6in,r upper back ,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+168,27,s-prd-411759133.jpg,yes,dscope,r upper back ,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+181,28,s-prd-411748538.jpg,yes,1ft,l cheek,,,female,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+182,28,s-prd-411748629.jpg,yes,6in,l cheek,,,female,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+183,28,s-prd-411748825.jpg,yes,dscope,l cheek,,,female,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+187,29,s-prd-411793793.jpg,yes,1ft,l elbow,,,female,89,"ii fair skin, blue eyes",no,no,white,6-benign-other,2-benign-seborrheic keratosis,,4.0,4.0,0
+188,29,s-prd-411794035.jpg,yes,6in,l elbow,,,female,89,"ii fair skin, blue eyes",no,no,white,6-benign-other,2-benign-seborrheic keratosis,,4.0,4.0,0
+189,29,s-prd-411794405.jpg,yes,dscope,l elbow,,,female,89,"ii fair skin, blue eyes",no,no,white,6-benign-other,2-benign-seborrheic keratosis,,4.0,4.0,0
+190,30,s-prd-667195549.jpeg,yes,n/a - virtual,right posterior calf,,,female,73,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,6-benign-other,9-malignant-sccis,6.0,6.0,0
+191,30,s-prd-667195548.jpeg,yes,n/a - virtual,right posterior calf,,,female,73,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,6-benign-other,9-malignant-sccis,6.0,6.0,0
+192,30,s-prd-667195547.jpeg,yes,n/a - virtual,right posterior calf,,,female,73,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,6-benign-other,9-malignant-sccis,6.0,6.0,0
+199,30,s-prd-411866762.jpg,yes,6in,r dorsal foot ,,,female,73,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,,4.0,4.0,0
+200,30,s-prd-411866337.jpg,yes,1ft,r dorsal foot ,,,female,73,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,,4.0,4.0,0
+201,30,s-prd-411868030.jpg,yes,dscope,r dorsal foot ,,,female,73,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,,4.0,4.0,0
+202,30,s-prd-411868454.jpg,yes,6in,r chest,,,female,73,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,9.0,8.0,0
+203,30,s-prd-411868242.jpg,yes,1ft,r chest,,,female,73,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,9.0,8.0,0
+204,30,s-prd-411868763.jpg,yes,dscope,r chest,,,female,73,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,9.0,8.0,0
+213,31,s-prd-411891070.jpg,yes,1ft,r upper back,,,female,32,iii darker white skin,no,yes,white,1-benign-melanocytic nevus,,,4.0,3.0,0
+215,31,s-prd-411891207.jpg,yes,6in,r upper back,,,female,32,iii darker white skin,no,yes,white,1-benign-melanocytic nevus,,,4.0,3.0,0
+216,31,s-prd-411891363.jpg,yes,dscope,r upper back,,,female,32,iii darker white skin,no,yes,white,1-benign-melanocytic nevus,,,4.0,3.0,0
+234,33,s-prd-416793011.jpg,yes,1ft,r thigh,,,male,80,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,10.0,5.0,0
+236,33,s-prd-416793069.jpg,yes,6in,r thigh,,,male,80,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,10.0,5.0,0
+238,33,s-prd-416793404.jpg,yes,dscope,r thigh,,,male,80,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,10.0,5.0,0
+241,33,s-prd-416794179.jpg,yes,1ft,l shoulder,,,male,80,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+242,33,s-prd-416794261.jpg,yes,6in,l shoulder,,,male,80,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+243,33,s-prd-416794663.jpg,yes,dscope,l shoulder,,,male,80,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+247,34,s-prd-416798194.jpg,yes,1ft,l shoulder,,,male,67,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+248,34,s-prd-416798333.jpg,yes,6in,l shoulder,,,male,67,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+249,34,s-prd-416798486.jpg,yes,dscope,l shoulder,,,male,67,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,4.0,3.0,0
+256,36,s-prd-416822756.jpg,yes,6in,l lateral calf ,,,male,52,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+257,36,s-prd-416822432.jpg,yes,1ft,l lateral calf ,,,male,52,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+258,36,s-prd-416823192.jpg,yes,dscope,l lateral calf ,,,male,52,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+265,38,s-prd-418830790.jpg,yes,1ft,r upper chest,,,female,39,"ii fair skin, blue eyes",yes,no,white,5-benign-hemangioma,,,2.0,1.0,0
+266,38,s-prd-418830875.jpg,yes,6in,r upper chest,,,female,39,"ii fair skin, blue eyes",yes,no,white,5-benign-hemangioma,,,2.0,1.0,0
+267,38,s-prd-418830937.jpg,yes,dscope,r upper chest,,,female,39,"ii fair skin, blue eyes",yes,no,white,5-benign-hemangioma,,,2.0,1.0,0
+304,47,s-prd-410183192.jpg,yes,n/a - virtual,r elbow,,,male,34,iv light brown skin,no,no,asian,14-other-non-neoplastic/inflammatory/infectious,,,20.0,20.0,0
+305,47,s-prd-410183193.jpg,yes,n/a - virtual,r elbow,,,male,34,iv light brown skin,no,no,asian,14-other-non-neoplastic/inflammatory/infectious,,,20.0,20.0,0
+309,49,s-prd-415983668.jpeg,yes,n/a - virtual,l chest ,,,male,65,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,11-malignant-melanoma,5.0,5.0,0
+310,49,s-prd-415983667.jpeg,yes,n/a - virtual,l chest ,,,male,65,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,11-malignant-melanoma,5.0,5.0,0
+319,51,s-prd-421323635.jpg,yes,6in,lower mid back,,,female,64,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,3.0,3.0,0
+320,51,s-prd-421323553.jpg,yes,1ft,lower mid back,,,female,64,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,3.0,3.0,0
+322,51,s-prd-421323898.jpg,yes,dscope,lower mid back,,,female,64,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,3.0,3.0,0
+323,52,s-prd-525712902.jpeg,yes,n/a - virtual,l lateral calf,,,female,76,"ii fair skin, blue eyes",no,no,white,6-benign-other,9-malignant-sccis,7-malignant-bcc,7.0,6.0,0
+332,52,s-prd-529092740.jpg,yes,1ft,l lateral calf,,,female,76,"ii fair skin, blue eyes",no,no,white,6-benign-other,9-malignant-sccis,7-malignant-bcc,7.0,6.0,0
+333,52,s-prd-529092810.jpg,yes,6in,l lateral calf,,,female,76,"ii fair skin, blue eyes",no,no,white,6-benign-other,9-malignant-sccis,7-malignant-bcc,7.0,6.0,0
+334,52,s-prd-529093428.jpg,yes,dscope,l lateral calf,,,female,76,"ii fair skin, blue eyes",no,no,white,6-benign-other,9-malignant-sccis,7-malignant-bcc,7.0,6.0,0
+357,56,s-prd-424123954.jpg,yes,6in,mid lower back,,,male,66,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,8.0,5.0,0
+358,56,s-prd-424123845.jpg,yes,1ft,mid lower back,,,male,66,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,8.0,5.0,0
+359,56,s-prd-424124309.jpg,yes,dscope,mid lower back,,,male,66,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,8.0,5.0,0
+425,68,s-prd-431068969.jpeg,yes,n/a - virtual,leg,,,female,62,"ii fair skin, blue eyes",no,no,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,,4.0,4.0,0
+426,68,s-prd-431068970.jpeg,yes,n/a - virtual,leg,,,female,62,"ii fair skin, blue eyes",no,no,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,,4.0,4.0,0
+501,84,s-prd-420027010.jpg,yes,n/a - virtual,r preauricular,,,male,49,iii darker white skin,no,yes,other,1-benign-melanocytic nevus,,,4.0,4.0,0
+502,84,s-prd-420027088.jpg,yes,n/a - virtual,r preauricular,,,male,49,iii darker white skin,no,yes,other,1-benign-melanocytic nevus,,,4.0,4.0,0
+515,88,s-prd-451905580.jpeg,yes,n/a - virtual,l ribcage,,,male,74,"ii fair skin, blue eyes",no,no,unknown,2-benign-seborrheic keratosis,9-malignant-sccis,,7.0,5.0,0
+516,88,s-prd-451905579.jpeg,yes,n/a - virtual,neck,,,male,74,"ii fair skin, blue eyes",no,no,unknown,2-benign-seborrheic keratosis,9-malignant-sccis,,5.0,4.0,0
+550,91,s-prd-491624367.jpeg,yes,n/a - virtual,hypogastric region,,,female,36,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,,5.0,4.0,0
+551,91,s-prd-491624366.jpeg,yes,n/a - virtual,hypogastric region,,,female,36,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,,5.0,4.0,0
+552,91,s-prd-501819423.jpg,yes,6in,hypogastric region,,,female,36,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,,5.0,4.0,0
+553,91,s-prd-501819518.jpg,yes,1ft,hypogastric region,,,female,36,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,,5.0,4.0,0
+554,91,s-prd-501819852.jpg,yes,dscope,hypogastric region,,,female,36,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,,5.0,4.0,0
+555,92,s-prd-454959398.jpeg,yes,n/a - virtual,r thigh,,,female,38,iii darker white skin,no,no,white,1-benign-melanocytic nevus,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,6.0,5.0,0
+556,92,s-prd-733289295.jpeg,yes,n/a - virtual,l abdomen,,,female,38,iii darker white skin,no,no,white,6-benign-other,,,2.0,2.0,0
+557,92,s-prd-733289296.jpeg,yes,n/a - virtual,l abdomen,,,female,38,iii darker white skin,no,no,white,6-benign-other,,,2.0,2.0,0
+571,94,s-prd-633528472.jpeg,yes,n/a - virtual,left cutaneous lip,,,female,54,"i pale white skin, blue/green eyes, blond/red hair",no,no,other,7-malignant-bcc,2-benign-seborrheic keratosis,6-benign-other,2.0,2.0,0
+664,111,s-prd-694338898.jpeg,yes,n/a - virtual,r medial lower eyelid,,,female,55,iii darker white skin,no,no,white,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,,4.0,3.0,0
+665,111,s-prd-694338900.jpeg,yes,n/a - virtual,r medial lower eyelid,,,female,55,iii darker white skin,no,no,white,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,,4.0,3.0,0
+702,117,s-prd-465588319.jpg,yes,dscope,low back,,,male,57,"ii fair skin, blue eyes",yes,no,white,6-benign-other,6-benign-other,,7.0,4.0,0
+706,117,s-prd-465589997.jpg,yes,6in,low back,,,male,57,"ii fair skin, blue eyes",yes,no,white,6-benign-other,6-benign-other,,7.0,4.0,0
+707,117,s-prd-465590127.jpg,yes,1ft,low back,,,male,57,"ii fair skin, blue eyes",yes,no,white,6-benign-other,6-benign-other,,7.0,4.0,0
+756,128,s-prd-655452267.jpeg,yes,n/a - virtual,back,,,female,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,11-malignant-melanoma,,0.0,0.0,0
+805,140,s-prd-478929556.jpeg,yes,n/a - virtual,l upper abdomen ,,,male,41,"ii fair skin, blue eyes",no,no,white,"13-other-melanocytic lesion with possible re-excision (severe/spitz nevus, aimp)",11-malignant-melanoma,,,,0
+806,140,s-prd-478929555.jpeg,yes,n/a - virtual,l upper abdomen ,,,male,41,"ii fair skin, blue eyes",no,no,white,"13-other-melanocytic lesion with possible re-excision (severe/spitz nevus, aimp)",11-malignant-melanoma,,,,0
+807,140,s-prd-478929553.jpeg,yes,n/a - virtual,l upper abdomen ,,,male,41,"ii fair skin, blue eyes",no,no,white,"13-other-melanocytic lesion with possible re-excision (severe/spitz nevus, aimp)",11-malignant-melanoma,,,,0
+814,141,s-prd-479306918.jpeg,yes,n/a - virtual,left upper lip,,,female,48,iii darker white skin,no,no,other,1-benign-melanocytic nevus,,,,,0
+887,159,s-prd-485598639.jpeg,yes,n/a - virtual,r deltoid ,,,male,70,"ii fair skin, blue eyes",no,no,white,7-malignant-bcc,6-benign-other,9-malignant-sccis,8.0,7.0,0
+888,160,s-prd-483987305.jpeg,yes,n/a - virtual,r lower cheek,,,male,56,"ii fair skin, blue eyes",no,yes,white,6-benign-other,11-malignant-melanoma,,6.0,4.0,0
+889,160,s-prd-483987308.jpeg,yes,n/a - virtual,r lower cheek,,,male,56,"ii fair skin, blue eyes",no,yes,white,6-benign-other,11-malignant-melanoma,,6.0,4.0,0
+890,160,s-prd-483987309.jpeg,yes,n/a - virtual,r lower cheek,,,male,56,"ii fair skin, blue eyes",no,yes,white,6-benign-other,11-malignant-melanoma,,6.0,4.0,0
+894,163,s-prd-467985721.jpeg,yes,n/a - virtual,r arm,,,male,30,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,7-malignant-bcc,6-benign-other,4.0,3.0,0
+895,163,s-prd-467985715.jpeg,yes,n/a - virtual,r arm,,,male,30,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,7-malignant-bcc,6-benign-other,4.0,3.0,0
+896,163,s-prd-467985720.jpeg,yes,n/a - virtual,r arm,,,male,30,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,7-malignant-bcc,6-benign-other,4.0,3.0,0
+976,175,s-prd-559560599.jpg,yes,n/a - virtual,back,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,,4.0,4.0,0
+977,175,s-prd-645439689.jpg,yes,n/a - virtual,r sideburn,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,6-benign-other,,5.0,5.0,0
+978,175,s-prd-645439688.jpg,yes,n/a - virtual,r sideburn,,,male,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,6-benign-other,,5.0,5.0,0
+985,177,s-prd-654268163.jpeg,yes,n/a - virtual,back,,,male,68,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,5.0,5.0,0
+1101,204,s-prd-501922787.jpg,yes,1ft,right lateral neck ,,,male,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,,10.0,5.0,0
+1102,204,s-prd-501922908.jpg,yes,6in,right lateral neck ,,,female,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,,10.0,5.0,0
+1103,204,s-prd-501923347.jpg,yes,dscope,right lateral neck ,,,female,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,,10.0,5.0,0
+1104,204,s-prd-481294629.jpeg,yes,n/a - virtual,right lateral neck ,,,female,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,8-malignant-scc,,10.0,5.0,0
+1105,204,s-prd-536202289.jpeg,yes,n/a - virtual,nose,,,female,66,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,3-benign-fibrous papule,7-malignant-bcc,1.0,1.0,0
+1130,208,s-prd-496866177.jpeg,yes,n/a - virtual,left lower back,,,male,59,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,6.0,6.0,0
+1209,221,s-prd-503796880.jpeg,yes,n/a - virtual,l knee,,,male,53,"ii fair skin, blue eyes",yes,no,white,7-malignant-bcc,11-malignant-melanoma,8-malignant-scc,,,0
+1213,222,s-prd-499582113.jpeg,yes,n/a - virtual,right forearm ,,,male,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,7-malignant-bcc,2-benign-seborrheic keratosis,6-benign-other,5.0,5.0,0
+1214,222,s-prd-499582114.jpeg,yes,n/a - virtual,left anterior shin ,,,male,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,7-malignant-bcc,5.0,6.0,0
+1215,222,s-prd-755027963.jpeg,yes,n/a - virtual,l upper chest,,,male,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,7-malignant-bcc,5-benign-hemangioma,11-malignant-melanoma,5.0,5.0,0
+1216,222,s-prd-755027964.jpeg,yes,n/a - virtual,l upper chest,,,male,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,7-malignant-bcc,5-benign-hemangioma,11-malignant-melanoma,5.0,5.0,0
+1217,222,s-prd-755027962.jpeg,yes,n/a - virtual,l upper chest,,,male,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,7-malignant-bcc,5-benign-hemangioma,11-malignant-melanoma,5.0,5.0,0
+1230,223,s-prd-673787420.jpg,yes,1ft,r upper chest,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,4.0,0
+1231,223,s-prd-673787581.jpg,yes,6in,r upper chest,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,4.0,0
+1232,223,s-prd-673787861.jpg,yes,dscope,r upper chest,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,4.0,0
+1233,223,s-prd-673788240.jpg,yes,1ft,r shoulder,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,12.0,8.0,0
+1234,223,s-prd-673788477.jpg,yes,6in,r shoulder,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,12.0,8.0,0
+1235,223,s-prd-673788729.jpg,yes,dscope,r shoulder,,,male,84,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,12.0,8.0,0
+1260,227,s-prd-504362071.jpeg,yes,n/a - virtual,left upper arm ,,,male,44,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,4.0,3.0,0
+1261,227,s-prd-504362074.jpeg,yes,n/a - virtual,left upper arm ,,,male,44,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,4.0,3.0,0
+1262,227,s-prd-653440844.jpeg,yes,n/a - virtual,left cheek,,,male,44,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,7-malignant-bcc,3.0,3.0,0
+1263,227,s-prd-653440846.jpeg,yes,n/a - virtual,left cheek,,,male,44,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,7-malignant-bcc,3.0,3.0,0
+1481,273,s-prd-636331275.jpg,yes,6in,r back,,,male,59,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,3.5,3.0,0
+1482,273,s-prd-636330860.jpg,yes,1ft,r back,,,female,59,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,3.5,3.0,0
+1483,273,s-prd-636332445.jpg,yes,dscope,r back,,,female,59,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,3.5,3.0,0
+1507,277,s-prd-671123324.jpeg,yes,n/a - virtual,l wrist,,,female,80,"ii fair skin, blue eyes",yes,no,white,8-malignant-scc,9-malignant-sccis,14-other-non-neoplastic/inflammatory/infectious,12.0,10.0,0
+1536,283,s-prd-540684700.jpg,yes,n/a - virtual,left postauricular area,,,female,60,iii darker white skin,no,no,asian,7-malignant-bcc,8-malignant-scc,11-malignant-melanoma,9.0,8.0,0
+1537,284,s-prd-540686248.jpeg,yes,n/a - virtual,r dorsal foot,,,male,31,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,,5.0,4.0,0
+1547,287,s-prd-546677619.jpg,yes,dscope,scalp,,,male,31,iii darker white skin,yes,no,asian,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,7.0,0
+1548,287,s-prd-546678125.jpg,yes,6in,scalp,,,male,31,iii darker white skin,yes,no,asian,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,7.0,0
+1549,287,s-prd-546681045.jpg,yes,1ft,scalp,,,male,31,iii darker white skin,yes,no,asian,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,7.0,0
+1550,287,s-prd-545467445.jpeg,yes,n/a - virtual,scalp,,,female,31,iii darker white skin,yes,no,asian,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,7.0,0
+1570,292,s-prd-544589260.jpeg,yes,n/a - virtual,chest,,,male,79,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,6.0,0
+1571,292,s-prd-544589253.jpeg,yes,n/a - virtual,chest,,,male,79,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,6.0,0
+1572,293,s-prd-551181619.jpg,yes,1ft,right 3rd intertarsal region,,,male,28,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,4.0,3.0,0
+1573,293,s-prd-551181677.jpg,yes,6in,right 3rd intertarsal region,,,male,28,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,4.0,3.0,0
+1574,293,s-prd-551182571.jpg,yes,6in,r elbow joint,,,male,28,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,,6.0,6.0,0
+1575,293,s-prd-551182500.jpg,yes,1ft,r elbow joint,,,male,28,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,,6.0,6.0,0
+1576,293,s-prd-551182737.jpg,yes,dscope,r elbow joint,,,male,28,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,,6.0,6.0,0
+1583,295,s-prd-532218805.jpeg,yes,n/a - virtual,lower back,,,male,58,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,12.0,6.0,0
+1647,314,s-prd-556927657.jpeg,yes,n/a - virtual,l cheek,,,female,69,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,7-malignant-bcc,2.0,2.0,0
+1648,314,s-prd-568317319.jpeg,yes,n/a - virtual,posterior neck,,,female,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+1649,314,s-prd-640388935.jpeg,yes,n/a - virtual,right forehead,,,male,69,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,3.0,3.0,0
+1656,315,s-prd-563066439.jpeg,yes,n/a - virtual,l medial shin,,,male,68,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,9-malignant-sccis,7-malignant-bcc,12.0,6.0,0
+1657,315,s-prd-563066441.jpeg,yes,n/a - virtual,l medial shin,,,male,68,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,9-malignant-sccis,7-malignant-bcc,12.0,6.0,0
+1705,327,s-prd-743398014.jpg,yes,1ft,l upper back,,,male,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+1706,327,s-prd-743398110.jpg,yes,6in,l upper back,,,male,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+1707,327,s-prd-743398592.jpg,yes,1ft,r upper back,,,male,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+1708,327,s-prd-743398718.jpg,yes,6in,r upper back,,,male,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+1709,327,s-prd-743590784.jpg,yes,dscope,l upper back,,,male,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+1710,327,s-prd-743591073.jpg,yes,dscope,r upper back,,,female,46,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+1722,330,s-prd-574925176.jpg,yes,1ft,r lower back,,,male,58,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+1724,330,s-prd-574925257.jpg,yes,6in,r lower back,,,male,58,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+1725,330,s-prd-574925440.jpg,yes,dscope,r lower back,,,female,58,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+1763,345,s-prd-579299086.jpg,yes,n/a - virtual,left nasal ala,,,male,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,2-benign-seborrheic keratosis,2.0,1.0,0
+1764,346,s-prd-583505094.jpg,yes,1ft,left mid back,,,male,30,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,6.0,6.0,0
+1765,346,s-prd-583505270.jpg,yes,6in,left mid back,,,male,30,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,6.0,6.0,0
+1766,346,s-prd-583505883.jpg,yes,dscope,left mid back,,,male,30,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,6.0,6.0,0
+1777,349,s-prd-585925562.jpg,yes,1ft,r upper back,,,female,62,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+1778,349,s-prd-585925686.jpg,yes,6in,r upper back,,,female,62,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+1779,349,s-prd-585925810.jpg,yes,1ft,r lower back,,,female,62,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,4.0,2.0,0
+1780,349,s-prd-585926164.jpg,yes,6in,r lower back,,,female,62,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,4.0,2.0,0
+1782,349,s-prd-585928425.jpg,yes,dscope,r lower back,,,female,62,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,4.0,2.0,0
+1784,349,s-prd-585928704.jpg,yes,dscope,r upper back,,,female,62,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,,,5.0,4.0,0
+1848,367,s-prd-594279865.jpeg,yes,n/a - virtual,right forearm,,,male,77,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,6-benign-other,10-malignant-ak,4.0,4.0,0
+1855,370,s-prd-596486603.jpeg,yes,n/a - virtual,arm,,,male,49,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+1874,374,s-prd-763822678.jpeg,yes,n/a - virtual,l hip,,0,female,55,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,7.0,6.0,0
+1875,374,s-prd-763822680.jpeg,yes,n/a - virtual,l cheek,,0,female,55,"ii fair skin, blue eyes",no,no,white,6-benign-other,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,5.0,4.0,0
+1876,374,s-prd-763822679.jpeg,yes,n/a - virtual,l cheek,,0,female,55,"ii fair skin, blue eyes",no,no,white,6-benign-other,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,5.0,4.0,0
+1884,377,s-prd-589489507.jpg,yes,n/a - virtual,r lateral cheek,,,male,37,iii darker white skin,no,yes,american indian or alaska native,6-benign-other,8-malignant-scc,,4.0,4.0,0
+1963,402,s-prd-619473486.jpeg,yes,n/a - virtual,r nasal sidewall,,,male,72,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,7-malignant-bcc,,4.0,3.0,0
+1964,402,s-prd-619473484.jpeg,yes,n/a - virtual,right shoulder,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+1965,402,s-prd-619473483.jpeg,yes,n/a - virtual,r nasal sidewall,,,male,72,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,7-malignant-bcc,,4.0,3.0,0
+1966,402,s-prd-619563152.jpeg,yes,n/a - virtual,right shoulder,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+1967,402,s-prd-619563149.jpeg,yes,n/a - virtual,right shoulder,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+1968,402,s-prd-619563141.jpeg,yes,n/a - virtual,right shoulder,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,8.0,5.0,0
+1969,402,s-prd-619564283.jpeg,yes,n/a - virtual,r nasal sidewall,,,male,72,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,7-malignant-bcc,,4.0,3.0,0
+1970,402,s-prd-619564284.jpeg,yes,n/a - virtual,r nasal sidewall,,,male,72,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,7-malignant-bcc,,4.0,3.0,0
+1971,402,s-prd-619564290.jpeg,yes,n/a - virtual,r nasal sidewall,,,male,72,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,7-malignant-bcc,,4.0,3.0,0
+1990,406,s-prd-624522109.jpg,yes,n/a - virtual,left forehead,,,male,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,7-malignant-bcc,6.0,5.0,0
+1991,406,s-prd-624522110.jpg,yes,n/a - virtual,left forehead,,,male,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,7-malignant-bcc,6.0,5.0,0
+1992,406,s-prd-624522111.jpg,yes,n/a - virtual,left forehead,,,male,66,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,7-malignant-bcc,6.0,5.0,0
+2014,410,s-prd-610338978.jpeg,yes,n/a - virtual,scalp,,,female,25,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,4.0,0
+2015,410,s-prd-610338994.jpeg,yes,n/a - virtual,scalp,,,female,25,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,4.0,0
+2016,410,s-prd-610338985.jpeg,yes,n/a - virtual,scalp,,,female,25,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,4.0,0
+2045,417,s-prd-629546117.jpg,yes,n/a - virtual,right forearm,,,female,47,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,10-malignant-ak,12-malignant-other,25.0,20.0,0
+2100,432,s-prd-636432520.jpg,yes,1ft,l shin,,,female,65,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2101,432,s-prd-636432835.jpg,yes,6in,l shin,,,female,65,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2102,432,s-prd-636433320.jpg,yes,dscope,l shin,,,female,65,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2106,433,s-prd-636527916.jpg,yes,1ft,r upper back,,,female,31,iv light brown skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2107,433,s-prd-636528104.jpg,yes,6in,r upper back,,,female,31,iv light brown skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2108,433,s-prd-636528278.jpg,yes,dscope,r upper back,,,female,31,iv light brown skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2154,442,s-prd-628903138.jpeg,yes,n/a - virtual,l knee,,,female,34,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,6-benign-other,11-malignant-melanoma,5.0,4.0,0
+2155,442,s-prd-644695859.jpeg,yes,n/a - virtual,left groin,,,female,34,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,9.0,6.0,0
+2156,442,s-prd-644695858.jpeg,yes,n/a - virtual,right ankle,,,female,34,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,2.0,2.0,0
+2163,443,s-prd-606607442.jpeg,yes,n/a - virtual,l lower lip,,,female,65,"ii fair skin, blue eyes",no,no,white,6-benign-other,10-malignant-ak,9-malignant-sccis,6.0,6.0,0
+2167,445,s-prd-608095992.jpeg,yes,n/a - virtual,right hand,,,female,56,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,3.0,3.0,0
+2168,445,s-prd-608095990.jpeg,yes,n/a - virtual,right hand,,,female,56,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,3.0,3.0,0
+2169,445,s-prd-608095993.jpeg,yes,n/a - virtual,right hand,,,female,56,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,3.0,3.0,0
+2185,451,s-prd-642772115.jpeg,yes,n/a - virtual,scalp,,,male,73,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,3.0,3.0,0
+2186,451,s-prd-642772121.jpeg,yes,n/a - virtual,left clavicle,,,male,73,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,3.0,3.0,0
+2205,456,s-prd-643313455.jpg,yes,1ft,right medial cheek,,,male,79,"ii fair skin, blue eyes",yes,no,white,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2206,456,s-prd-643313530.jpg,yes,6in,right medial cheek,,,male,79,"ii fair skin, blue eyes",yes,no,white,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2207,456,s-prd-643313637.jpg,yes,dscope,right medial cheek,,,male,79,"ii fair skin, blue eyes",yes,no,white,14-other-non-neoplastic/inflammatory/infectious,,,4.0,3.0,0
+2226,461,s-prd-646598296.jpg,yes,1ft,l upper back,,,male,42,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,,6.0,5.0,0
+2227,461,s-prd-646598425.jpg,yes,6in,l upper back,,,male,42,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,,6.0,5.0,0
+2228,461,s-prd-646598952.jpg,yes,dscope,l upper back,,,male,42,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,,6.0,5.0,0
+2265,468,s-prd-709807462.jpeg,yes,n/a - virtual,r calf,,,male,73,"ii fair skin, blue eyes",yes,yes,white,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,4.0,4.0,0
+2266,468,s-prd-709807463.jpeg,yes,n/a - virtual,r calf,,,male,73,"ii fair skin, blue eyes",yes,yes,white,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,4.0,4.0,0
+2267,468,s-prd-709811241.jpeg,yes,n/a - virtual,r calf,,,male,73,"ii fair skin, blue eyes",yes,yes,white,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,4.0,4.0,0
+2268,468,s-prd-709811242.jpeg,yes,n/a - virtual,r calf,,,male,73,"ii fair skin, blue eyes",yes,yes,white,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,4.0,4.0,0
+2275,470,s-prd-643645382.jpeg,yes,n/a - virtual,r preauricular,,,female,50,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,7-malignant-bcc,14-other-non-neoplastic/inflammatory/infectious,4.0,4.0,0
+2276,470,s-prd-643645385.jpeg,yes,n/a - virtual,r preauricular,,,female,50,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,7-malignant-bcc,14-other-non-neoplastic/inflammatory/infectious,4.0,4.0,0
+2283,473,s-prd-644474538.jpeg,yes,n/a - virtual,left back,,,female,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,6.0,4.0,0
+2284,473,s-prd-644474539.jpeg,yes,n/a - virtual,left back,,,female,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,1-benign-melanocytic nevus,,6.0,4.0,0
+2285,474,s-prd-644328647.jpg,yes,n/a - virtual,right hand,,,female,70,v brown skin,no,no,black or african american,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,2-benign-seborrheic keratosis,5.0,5.0,0
+2286,474,s-prd-644328646.jpg,yes,n/a - virtual,right hand,,,female,70,v brown skin,no,no,black or african american,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,2-benign-seborrheic keratosis,5.0,5.0,0
+2287,474,s-prd-644328648.jpg,yes,n/a - virtual,right hand,,,female,70,v brown skin,no,no,black or african american,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,2-benign-seborrheic keratosis,5.0,5.0,0
+2296,476,s-prd-648911581.jpeg,yes,n/a - virtual,mid vertex,,,male,72,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,15.0,15.0,0
+2357,487,s-prd-652369736.jpeg,yes,n/a - virtual,l preauricular,,,female,45,"i pale white skin, blue/green eyes, blond/red hair",no,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,8.0,8.0,0
+2364,489,s-prd-653460699.jpg,yes,1ft,l abdomen,,,male,32,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,2.0,0
+2365,489,s-prd-653460896.jpg,yes,6in,l abdomen,,,male,32,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,2.0,0
+2366,489,s-prd-653461170.jpg,yes,dscope,l abdomen,,,male,32,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,2.0,0
+2367,489,s-prd-643799717.jpeg,yes,n/a - virtual,l abdomen,,,male,32,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,2.0,0
+2368,489,s-prd-643799716.jpeg,yes,n/a - virtual,l abdomen,,,male,32,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,2.0,0
+2372,490,s-prd-697365396.jpeg,yes,n/a - virtual,scalp,,,female,74,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,,9.0,9.0,0
+2388,494,s-prd-653656637.jpg,yes,1ft,left back,,,male,52,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,4.0,0
+2389,494,s-prd-653656735.jpg,yes,6in,left back,,,male,52,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,4.0,0
+2390,494,s-prd-653657290.jpg,yes,dscope,left back,,,female,52,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,4.0,0
+2394,496,s-prd-628386151.jpg,yes,n/a - virtual,left cheek,,,male,66,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,9-malignant-sccis,2-benign-seborrheic keratosis,4.0,4.0,0
+2395,496,s-prd-628386152.jpg,yes,n/a - virtual,left cheek,,,male,66,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,9-malignant-sccis,2-benign-seborrheic keratosis,4.0,4.0,0
+2396,496,s-prd-628386149.jpg,yes,n/a - virtual,left cheek,,,male,66,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,9-malignant-sccis,2-benign-seborrheic keratosis,4.0,4.0,0
+2397,497,s-prd-571765918.jpeg,yes,n/a - virtual,right thigh,,,male,57,"ii fair skin, blue eyes",no,no,white,6-benign-other,6-benign-other,,4.0,3.0,0
+2398,497,s-prd-641334357.jpeg,yes,n/a - virtual,right lateral canthus,,,male,57,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,2-benign-seborrheic keratosis,3.0,3.0,0
+2399,497,s-prd-641334354.jpeg,yes,n/a - virtual,right lateral canthus,,,male,57,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,2-benign-seborrheic keratosis,3.0,3.0,0
+2400,497,s-prd-641334353.jpeg,yes,n/a - virtual,right lateral canthus,,,male,57,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,10-malignant-ak,2-benign-seborrheic keratosis,3.0,3.0,0
+2416,500,s-prd-650832139.jpg,yes,n/a - virtual,right calf,,,male,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,3.0,0
+2417,500,s-prd-650832138.jpg,yes,n/a - virtual,right calf,,,male,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,3.0,0
+2418,500,s-prd-650832141.jpg,yes,n/a - virtual,right calf,,,male,31,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,11-malignant-melanoma,,6.0,3.0,0
+2425,502,s-prd-652950546.jpeg,yes,n/a - virtual,right leg,,,female,38,iii darker white skin,no,no,white,14-other-non-neoplastic/inflammatory/infectious,,,10.0,10.0,0
+2426,502,s-prd-652950549.jpeg,yes,n/a - virtual,right leg,,,female,38,iii darker white skin,no,no,white,14-other-non-neoplastic/inflammatory/infectious,,,10.0,10.0,0
+2427,503,s-prd-650679437.jpeg,yes,n/a - virtual,cheek,,,male,38,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,3.0,2.0,0
+2428,504,s-prd-656472437.jpeg,yes,n/a - virtual,left frontal scalp,,,male,37,iii darker white skin,no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,6.0,6.0,0
+2441,509,s-prd-661470233.jpg,yes,6in,right neck,,,male,42,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,7.0,4.0,0
+2442,509,s-prd-661470103.jpg,yes,1ft,right neck,,,female,42,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,7.0,4.0,0
+2443,509,s-prd-661470459.jpg,yes,dscope,right neck,,,female,42,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,7.0,4.0,0
+2444,509,s-prd-723758803.jpeg,yes,n/a - virtual,neck,,,female,42,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,6.0,4.0,0
+2445,509,s-prd-723758802.jpeg,yes,n/a - virtual,neck,,,female,42,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,6.0,4.0,0
+2455,511,s-prd-710303485.jpeg,yes,n/a - virtual,l nose,,,female,67,"ii fair skin, blue eyes",no,no,white,6-benign-other,1-benign-melanocytic nevus,7-malignant-bcc,4.0,4.0,0
+2528,543,s-prd-669405184.jpeg,yes,n/a - virtual,left upper arm,,,male,76,"ii fair skin, blue eyes",yes,unknown,unknown,9-malignant-sccis,8-malignant-scc,2-benign-seborrheic keratosis,5.0,4.0,0
+2529,543,s-prd-669405183.jpeg,yes,n/a - virtual,left upper arm,,,male,76,"ii fair skin, blue eyes",yes,unknown,unknown,9-malignant-sccis,8-malignant-scc,2-benign-seborrheic keratosis,5.0,4.0,0
+2548,549,s-prd-670278547.jpeg,yes,n/a - virtual,right arm,,,male,33,"ii fair skin, blue eyes",no,no,white,14-other-non-neoplastic/inflammatory/infectious,,,0.0,0.0,0
+2549,550,s-prd-672942201.jpeg,yes,n/a - virtual,scalp,,,male,77,"ii fair skin, blue eyes",no,no,white,9-malignant-sccis,8-malignant-scc,10-malignant-ak,10.0,6.0,0
+2550,550,s-prd-672942200.jpeg,yes,n/a - virtual,scalp,,,male,77,"ii fair skin, blue eyes",no,no,white,9-malignant-sccis,8-malignant-scc,10-malignant-ak,10.0,6.0,0
+2560,552,s-prd-672877978.jpeg,yes,n/a - virtual,right arm,,,female,40,iii darker white skin,yes,no,white,1-benign-melanocytic nevus,6-benign-other,2-benign-seborrheic keratosis,2.0,2.0,0
+2561,552,s-prd-672877980.jpeg,yes,n/a - virtual,right arm,,,male,40,iii darker white skin,yes,no,white,1-benign-melanocytic nevus,6-benign-other,2-benign-seborrheic keratosis,2.0,2.0,0
+2562,552,s-prd-672877979.jpeg,yes,n/a - virtual,right arm,,,male,40,iii darker white skin,yes,no,white,1-benign-melanocytic nevus,6-benign-other,2-benign-seborrheic keratosis,2.0,2.0,0
+2566,554,s-prd-622542850.jpeg,yes,n/a - virtual,lower lip,,,female,54,"ii fair skin, blue eyes",no,no,white,6-benign-other,14-other-non-neoplastic/inflammatory/infectious,11-malignant-melanoma,5.0,3.0,0
+2567,554,s-prd-622542852.jpeg,yes,n/a - virtual,lower lip,,,female,54,"ii fair skin, blue eyes",no,no,white,6-benign-other,14-other-non-neoplastic/inflammatory/infectious,11-malignant-melanoma,5.0,3.0,0
+2568,554,s-prd-622542851.jpeg,yes,n/a - virtual,lower lip,,,female,54,"ii fair skin, blue eyes",no,no,white,6-benign-other,14-other-non-neoplastic/inflammatory/infectious,11-malignant-melanoma,5.0,3.0,0
+2591,562,s-prd-675941199.jpeg,yes,n/a - virtual,left lower cutaneous lip,,,male,71,"ii fair skin, blue eyes",no,no,asian,6-benign-other,1-benign-melanocytic nevus,6-benign-other,2.0,2.0,0
+2649,577,s-prd-683762594.jpeg,yes,n/a - virtual,right temple,,,female,82,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,10-malignant-ak,2-benign-seborrheic keratosis,10.0,9.0,0
+2653,579,s-prd-675138204.jpeg,yes,n/a - virtual,l clavicle,,,female,29,"ii fair skin, blue eyes",no,unknown,unknown,1-benign-melanocytic nevus,6-benign-other,,5.0,3.0,0
+2660,581,s-prd-672878356.jpeg,yes,n/a - virtual,right cheek,,,female,36,iii darker white skin,no,unknown,unknown,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+2661,581,s-prd-673008542.jpeg,yes,n/a - virtual,right cheek,,,male,36,iii darker white skin,no,unknown,unknown,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+2662,581,s-prd-673008543.jpeg,yes,n/a - virtual,right cheek,,,male,36,iii darker white skin,no,unknown,unknown,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,,4.0,4.0,0
+2672,584,s-prd-688088665.jpg,yes,n/a - virtual,l inguinal crease,,,male,38,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,10.0,5.0,0
+2673,584,s-prd-688088552.jpg,yes,n/a - virtual,l inguinal crease,,,male,38,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,10.0,5.0,0
+2674,586,s-prd-678300174.jpeg,yes,n/a - virtual,back,,,male,34,iv light brown skin,no,no,white,1-benign-melanocytic nevus,2-benign-seborrheic keratosis,6-benign-other,4.0,3.0,0
+2675,587,s-prd-675576007.jpeg,yes,n/a - virtual,left nasal dorsum,,,male,78,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,14-other-non-neoplastic/inflammatory/infectious,8-malignant-scc,5.0,3.0,0
+2682,590,s-prd-688078757.jpg,yes,n/a - virtual,r flank,,,male,58,"ii fair skin, blue eyes",no,no,unknown,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,7.0,5.0,0
+2701,592,s-prd-691371290.jpg,yes,1ft,right arm,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2702,592,s-prd-691371769.jpg,yes,6in,right arm,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2703,592,s-prd-691371959.jpg,yes,dscope,right arm,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2704,592,s-prd-691372120.jpg,yes,1ft,left shin,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+2705,592,s-prd-691372229.jpg,yes,6in,left shin,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+2706,592,s-prd-691372518.jpg,yes,dscope,left shin,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,6.0,4.0,0
+2707,592,s-prd-691372932.jpg,yes,6in,upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,5.0,0
+2708,592,s-prd-691372862.jpg,yes,1ft,upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,5.0,0
+2709,592,s-prd-691373130.jpg,yes,dscope,upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,5.0,0
+2731,598,s-prd-679190064.jpeg,yes,n/a - virtual,left back,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,6.0,6.0,0
+2732,598,s-prd-679190063.jpeg,yes,n/a - virtual,left back,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,6.0,6.0,0
+2733,598,s-prd-679190065.jpeg,yes,n/a - virtual,left back,,,male,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,6.0,6.0,0
+2734,599,s-prd-694790787.jpeg,yes,n/a - virtual,thigh,,,male,33,"ii fair skin, blue eyes",no,no,white,4-benign-dermatofibroma,1-benign-melanocytic nevus,,5.0,5.0,0
+2735,599,s-prd-694790786.jpeg,yes,n/a - virtual,shoulder,,,male,33,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,3.0,3.0,0
+2736,599,s-prd-694790784.jpeg,yes,n/a - virtual,shoulder,,,male,33,"ii fair skin, blue eyes",no,no,white,5-benign-hemangioma,,,3.0,3.0,0
+2737,600,s-prd-661993505.jpeg,yes,n/a - virtual,right leg,,,male,28,"ii fair skin, blue eyes",no,no,other,14-other-non-neoplastic/inflammatory/infectious,2-benign-seborrheic keratosis,6-benign-other,3.0,3.0,0
+2738,600,s-prd-661993506.jpeg,yes,n/a - virtual,left leg,,,male,28,"ii fair skin, blue eyes",no,no,other,14-other-non-neoplastic/inflammatory/infectious,2-benign-seborrheic keratosis,6-benign-other,3.0,3.0,0
+2739,600,s-prd-661993504.jpeg,yes,n/a - virtual,right leg,,,male,28,"ii fair skin, blue eyes",no,no,other,14-other-non-neoplastic/inflammatory/infectious,2-benign-seborrheic keratosis,6-benign-other,3.0,3.0,0
+2743,602,s-prd-685596668.jpeg,yes,n/a - virtual,l middle finger,,,female,56,iii darker white skin,no,no,asian,6-benign-other,8-malignant-scc,,8.0,8.0,0
+2774,610,s-prd-695429052.jpeg,yes,n/a - virtual,left forearm,,,female,37,"ii fair skin, blue eyes",no,no,other,1-benign-melanocytic nevus,6-benign-other,1-benign-melanocytic nevus,6.0,6.0,0
+2790,615,s-prd-692822208.jpeg,yes,n/a - virtual,l temple,,,female,64,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,9-malignant-sccis,8-malignant-scc,5.0,4.0,0
+2794,617,s-prd-691649532.jpeg,yes,n/a - virtual,right ear,,,male,36,iv light brown skin,no,yes,other,6-benign-other,1-benign-melanocytic nevus,1-benign-melanocytic nevus,3.0,3.0,0
+2795,617,s-prd-691649539.jpeg,yes,n/a - virtual,right ear,,,male,36,iv light brown skin,no,yes,other,6-benign-other,1-benign-melanocytic nevus,1-benign-melanocytic nevus,3.0,3.0,0
+2796,617,s-prd-691649535.jpeg,yes,n/a - virtual,right ear,,,male,36,iv light brown skin,no,yes,other,6-benign-other,1-benign-melanocytic nevus,1-benign-melanocytic nevus,3.0,3.0,0
+2818,623,s-prd-700901601.jpeg,yes,n/a - virtual,r upper chest,,,male,41,"ii fair skin, blue eyes",no,no,white,6-benign-other,10-malignant-ak,2-benign-seborrheic keratosis,4.0,3.0,0
+2822,625,s-prd-688203089.jpeg,yes,n/a - virtual,left nasal bridge,,,male,26,"ii fair skin, blue eyes",no,yes,white,5-benign-hemangioma,6-benign-other,10-malignant-ak,3.0,3.0,0
+2823,625,s-prd-688203086.jpeg,yes,n/a - virtual,left nasal bridge,,,male,26,"ii fair skin, blue eyes",no,yes,white,5-benign-hemangioma,6-benign-other,10-malignant-ak,3.0,3.0,0
+2824,625,s-prd-688203088.jpeg,yes,n/a - virtual,left nasal bridge,,,female,26,"ii fair skin, blue eyes",no,yes,white,5-benign-hemangioma,6-benign-other,10-malignant-ak,3.0,3.0,0
+2842,630,s-prd-708988895.jpg,yes,1ft,r posterior arm,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2843,630,s-prd-708989556.jpg,yes,6in,r posterior arm,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2844,630,s-prd-708989975.jpg,yes,dscope,r posterior arm,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2845,630,s-prd-708990198.jpg,yes,1ft,right hand,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2846,630,s-prd-708990274.jpg,yes,6in,right hand,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2847,630,s-prd-708990649.jpg,yes,dscope,right hand,,,male,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2848,630,s-prd-708990765.jpg,yes,1ft,right buttox,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2849,630,s-prd-708990965.jpg,yes,6in,right buttox,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2850,630,s-prd-708991518.jpg,yes,dscope,right buttox,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2851,630,s-prd-708992823.jpg,yes,1ft,right ankle,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2852,630,s-prd-708995008.jpg,yes,dscope,right ankle,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2853,630,s-prd-708993968.jpg,yes,6in,right ankle,,,female,33,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,0.0,0.0,0
+2854,631,s-prd-707721286.jpeg,yes,n/a - virtual,right forearm,,,female,78,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,5.0,5.0,0
+2855,631,s-prd-707721289.jpeg,yes,n/a - virtual,right forearm,,,female,78,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,5.0,5.0,0
+2856,631,s-prd-707721285.jpeg,yes,n/a - virtual,right forearm,,,female,78,"ii fair skin, blue eyes",yes,no,white,6-benign-other,,,5.0,5.0,0
+2860,634,s-prd-714749604.jpg,yes,6in,right knee,,,male,78,iii darker white skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,6.0,3.0,0
+2861,634,s-prd-714749254.jpg,yes,1ft,right knee,,,male,78,iii darker white skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,6.0,3.0,0
+2862,634,s-prd-714750375.jpg,yes,dscope,right knee,,,male,78,iii darker white skin,no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,,,6.0,3.0,0
+2872,636,s-prd-712077896.jpg,yes,n/a - virtual,l hand,,,male,69,"ii fair skin, blue eyes",no,no,white,8-malignant-scc,6-benign-other,14-other-non-neoplastic/inflammatory/infectious,11.0,11.0,0
+2879,638,s-prd-708361373.jpeg,yes,n/a - virtual,r lateral eyelid,,,female,83,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,11-malignant-melanoma,,7.0,6.0,0
+2880,638,s-prd-708361377.jpeg,yes,n/a - virtual,r lateral eyelid,,,female,83,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,11-malignant-melanoma,,7.0,6.0,0
+2881,638,s-prd-708361375.jpeg,yes,n/a - virtual,r lateral eyelid,,,female,83,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,11-malignant-melanoma,,7.0,6.0,0
+2882,639,s-prd-718256822.jpg,yes,1ft,left upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2883,639,s-prd-718256877.jpg,yes,6in,left upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2884,639,s-prd-718257124.jpg,yes,dscope,left upper back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+2885,639,s-prd-718257330.jpg,yes,1ft,lower mid back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,4.0,0
+2886,639,s-prd-718257401.jpg,yes,6in,lower mid back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,4.0,0
+2887,639,s-prd-718257588.jpg,yes,dscope,lower mid back,,,female,29,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,7.0,4.0,0
+2907,642,s-prd-714548214.jpeg,yes,n/a - virtual,l upper arm,,,male,81,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2908,642,s-prd-718949185.jpg,yes,1ft,l upper arm,,,female,81,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2909,642,s-prd-718949594.jpg,yes,6in,l upper arm,,,male,81,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2910,642,s-prd-718950947.jpg,yes,dscope,l upper arm,,,male,81,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,5.0,0
+2929,649,s-prd-721839217.jpg,yes,6in,l lower back,,,male,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2930,649,s-prd-721839056.jpg,yes,1ft,l lower back,,,male,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2931,649,s-prd-721839586.jpg,yes,dscope,l lower back,,,male,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2932,649,s-prd-721840324.jpg,yes,1ft,right mid-back,,,female,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2933,649,s-prd-721840488.jpg,yes,6in,right mid-back,,,female,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2934,649,s-prd-721840769.jpg,yes,dscope,right mid-back,,,female,70,"ii fair skin, blue eyes",yes,no,white,1-benign-melanocytic nevus,,,3.0,3.0,0
+2950,655,s-prd-723013772.jpg,yes,n/a - virtual,l dorsal foot,,,male,71,"ii fair skin, blue eyes",no,no,white,11-malignant-melanoma,2-benign-seborrheic keratosis,,22.0,20.0,0
+2951,655,s-prd-723014074.jpg,yes,n/a - virtual,mid back,,,male,71,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,15.0,10.0,0
+2952,655,s-prd-723014176.jpg,yes,n/a - virtual,right back,,,male,71,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,12.0,10.0,0
+2953,655,s-prd-723014240.jpg,yes,n/a - virtual,left back,,,female,71,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,5.0,5.0,0
+2963,657,s-prd-696265332.jpeg,yes,n/a - virtual,nasal bridge,,,female,67,"ii fair skin, blue eyes",no,no,white,7-malignant-bcc,14-other-non-neoplastic/inflammatory/infectious,,3.0,3.0,0
+2964,658,s-prd-716765881.jpeg,yes,n/a - virtual,back,,,female,61,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,3.0,0
+2965,658,s-prd-716765882.jpeg,yes,n/a - virtual,back,,,female,61,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,3.0,0
+2978,661,s-prd-726521854.jpg,yes,dscope,l ear,,,female,56,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,,,5.0,4.0,0
+2979,661,s-prd-726520965.jpg,yes,1ft,l ear,,,female,56,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,,,5.0,4.0,0
+2980,661,s-prd-726521101.jpg,yes,6in,l ear,,,female,56,iv light brown skin,no,no,asian,1-benign-melanocytic nevus,,,5.0,4.0,0
+2981,662,s-prd-711638163.jpg,yes,n/a - virtual,l eyebrow,,,female,47,iii darker white skin,no,no,asian,1-benign-melanocytic nevus,7-malignant-bcc,,5.0,4.0,0
+2982,662,s-prd-711638313.jpg,yes,n/a - virtual,l eyebrow,,,female,47,iii darker white skin,no,no,asian,1-benign-melanocytic nevus,7-malignant-bcc,,5.0,4.0,0
+2983,662,s-prd-711638393.jpg,yes,n/a - virtual,l eyebrow,,,female,47,iii darker white skin,no,no,asian,1-benign-melanocytic nevus,7-malignant-bcc,,5.0,4.0,0
+2990,665,s-prd-723481886.jpeg,yes,n/a - virtual,left inner thigh,,,male,60,iv light brown skin,no,no,asian,14-other-non-neoplastic/inflammatory/infectious,9-malignant-sccis,,4.0,4.0,0
+2991,665,s-prd-723481888.jpeg,yes,n/a - virtual,left inner thigh,,,male,60,iv light brown skin,no,no,asian,14-other-non-neoplastic/inflammatory/infectious,9-malignant-sccis,,4.0,4.0,0
+2992,665,s-prd-723481887.jpeg,yes,n/a - virtual,left inner thigh,,,male,60,iv light brown skin,no,no,asian,14-other-non-neoplastic/inflammatory/infectious,9-malignant-sccis,,4.0,4.0,0
+2996,667,s-prd-697882203.jpeg,yes,n/a - virtual,scalp,,,female,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,6.0,0
+2997,667,s-prd-697882198.jpeg,yes,n/a - virtual,scalp,,,female,69,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,,,6.0,6.0,0
+2998,668,s-prd-726513831.jpg,yes,n/a - virtual,l forearm,,,female,64,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,10.0,10.0,0
+2999,668,s-prd-726514794.jpg,yes,n/a - virtual,l forearm,,,female,64,iii darker white skin,no,no,asian,2-benign-seborrheic keratosis,9-malignant-sccis,8-malignant-scc,10.0,10.0,0
+3005,671,s-prd-722591153.jpeg,yes,n/a - virtual,r crown of scalp,,,female,87,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,5.0,5.0,0
+3006,671,s-prd-722591151.jpeg,yes,n/a - virtual,r crown of scalp,,,female,87,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,5.0,5.0,0
+3007,671,s-prd-722591152.jpeg,yes,n/a - virtual,r crown of scalp,,,male,87,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,5.0,5.0,0
+3008,671,s-prd-722608460.jpeg,yes,n/a - virtual,r crown of scalp,,,male,87,"ii fair skin, blue eyes",no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,5.0,5.0,0
+3009,672,s-prd-723528917.jpg,yes,n/a - virtual,forehead,,,male,83,iii darker white skin,no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,4.0,4.0,0
+3010,672,s-prd-723528902.jpg,yes,n/a - virtual,forehead,,,male,83,iii darker white skin,no,no,white,10-malignant-ak,2-benign-seborrheic keratosis,9-malignant-sccis,4.0,4.0,0
+3011,673,s-prd-732614174.jpg,yes,1ft,l upper back,,,male,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+3012,673,s-prd-732614589.jpg,yes,dscope,l upper back,,,male,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+3013,673,s-prd-732614313.jpg,yes,6in,l upper back,,,female,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+3014,673,s-prd-732614972.jpg,yes,6in,mid back,,,female,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.0,2.0,0
+3015,673,s-prd-732614880.jpg,yes,1ft,mid back,,,female,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.0,2.0,0
+3016,673,s-prd-732615096.jpg,yes,dscope,mid back,,,female,62,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.0,2.0,0
+3018,693,s-prd-730721535.jpeg,yes,n/a - virtual,l hand radial,,,female,36,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,4.0,4.0,0
+3019,693,s-prd-730721536.jpeg,yes,n/a - virtual,l hand ulnar,,,male,36,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,4.0,3.0,0
+3026,695,s-prd-734332260.jpg,yes,1ft,r upper arm,,,female,35,vi dark brown or black skin,no,no,black or african american,4-benign-dermatofibroma,6-benign-other,,5.0,5.0,0
+3027,695,s-prd-734332330.jpg,yes,6in,r upper arm,,,female,35,vi dark brown or black skin,no,no,black or african american,4-benign-dermatofibroma,6-benign-other,,5.0,5.0,0
+3028,695,s-prd-734332560.jpg,yes,dscope,r upper arm,,,female,35,vi dark brown or black skin,no,no,black or african american,4-benign-dermatofibroma,6-benign-other,,5.0,5.0,0
+3029,695,s-prd-734333066.jpg,yes,6in,r heel,,,female,35,vi dark brown or black skin,no,no,black or african american,1-benign-melanocytic nevus,6-benign-other,,5.0,3.0,0
+3030,695,s-prd-734332998.jpg,yes,1ft,r heel,,,female,35,vi dark brown or black skin,no,no,black or african american,1-benign-melanocytic nevus,6-benign-other,,5.0,3.0,0
+3031,695,s-prd-734333478.jpg,yes,dscope,r heel,,,male,35,vi dark brown or black skin,no,no,black or african american,1-benign-melanocytic nevus,6-benign-other,,5.0,3.0,0
+3035,697,s-prd-732120196.jpg,yes,n/a - virtual,nasal dorsum,,,male,77,"ii fair skin, blue eyes",no,no,white,7-malignant-bcc,8-malignant-scc,,4.0,3.0,0
+3039,698,s-prd-736950207.jpg,yes,6in,left upper thigh,,,male,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.5,2.5,0
+3040,698,s-prd-736950116.jpg,yes,1ft,left upper thigh,,,female,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.5,2.5,0
+3041,698,s-prd-736950456.jpg,yes,dscope,left upper thigh,,,female,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,2.5,2.5,0
+3042,698,s-prd-736951247.jpg,yes,1ft,left mid thigh,,,female,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+3043,698,s-prd-736951608.jpg,yes,dscope,left mid thigh,,,female,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+3044,698,s-prd-736951464.jpg,yes,6in,left mid thigh,,,female,59,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,1-benign-melanocytic nevus,,,4.0,4.0,0
+3045,699,s-prd-733693733.jpg,yes,n/a - virtual,back,,,female,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,11-malignant-melanoma,6.0,3.0,0
+3046,699,s-prd-733701798.jpg,yes,n/a - virtual,back,,,female,72,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,11-malignant-melanoma,6.0,3.0,0
+3050,701,s-prd-730798761.jpg,yes,n/a - virtual,l temple,,,male,57,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,11-malignant-melanoma,7.0,5.0,0
+3054,703,s-prd-715846600.jpg,yes,n/a - virtual,r lateral foot,,,male,51,iii darker white skin,no,no,asian,1-benign-melanocytic nevus,1-benign-melanocytic nevus,11-malignant-melanoma,6.0,4.0,0
+3087,712,s-prd-730161338.jpg,yes,n/a - virtual,back,,,male,86,"ii fair skin, blue eyes",no,no,white,6-benign-other,7-malignant-bcc,8-malignant-scc,1.5,1.5,0
+3088,713,s-prd-724126573.jpeg,yes,n/a - virtual,r cheek,,,male,72,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,9.0,9.0,0
+3089,713,s-prd-744038751.jpg,yes,6in,r cheek,,,male,72,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,9.0,9.0,0
+3090,713,s-prd-744038665.jpg,yes,1ft,r cheek,,,male,72,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,9.0,9.0,0
+3091,713,s-prd-744038985.jpg,yes,dscope,r cheek,,,male,72,"i pale white skin, blue/green eyes, blond/red hair",yes,no,white,10-malignant-ak,2-benign-seborrheic keratosis,,9.0,9.0,0
+3095,715,s-prd-737940020.jpg,yes,n/a - virtual,l arm,,,female,72,iv light brown skin,no,no,asian,6-benign-other,,,15.0,15.0,0
+3096,715,s-prd-737940199.jpg,yes,n/a - virtual,l arm,,,female,72,iv light brown skin,no,no,asian,6-benign-other,,,15.0,15.0,0
+3097,715,s-prd-737940524.jpg,yes,n/a - virtual,l wrist,,,female,72,iv light brown skin,no,no,asian,2-benign-seborrheic keratosis,,,3.0,3.0,0
+3125,726,s-prd-751361630.jpg,yes,6in,l nasal bridge,,0,female,48,iii darker white skin,no,no,white,6-benign-other,,,3.5,3.5,0
+3127,726,s-prd-751361888.jpg,yes,dscope,l nasal bridge,,0,female,48,iii darker white skin,no,no,white,6-benign-other,,,3.5,3.5,0
+3131,726,s-prd-751361439.jpg,yes,1ft,l nasal bridge,,0,female,48,iii darker white skin,no,no,white,6-benign-other,,,3.5,3.5,0
+3154,732,s-prd-737412099.jpg,yes,n/a - virtual,l lower leg,,0,female,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,4-benign-dermatofibroma,6-benign-other,6.5,6.5,0
+3269,759,s-prd-774291888.jpg,yes,1ft,r upper chest,,0,male,68,"i pale white skin, blue/green eyes, blond/red hair",no,unknown,white,6-benign-other,,,4.0,4.0,0
+3271,759,s-prd-774291930.jpg,yes,6in,r upper chest,,0,male,68,"i pale white skin, blue/green eyes, blond/red hair",no,unknown,white,6-benign-other,,,4.0,4.0,0
+3272,759,s-prd-774292742.jpg,yes,dscope,r upper chest,,0,male,68,"i pale white skin, blue/green eyes, blond/red hair",no,unknown,white,6-benign-other,,,4.0,4.0,0
+3288,764,s-prd-776954982.jpg,yes,1ft,l upper back,,0,male,39,iv light brown skin,no,yes,white,2-benign-seborrheic keratosis,,,3.0,3.0,0
+3289,764,s-prd-776955560.jpg,yes,dscope,l upper back,,0,male,39,iv light brown skin,no,yes,white,2-benign-seborrheic keratosis,,,3.0,3.0,0
+3290,764,s-prd-776955196.jpg,yes,6in,l upper back,,0,male,39,iv light brown skin,no,yes,white,2-benign-seborrheic keratosis,,,3.0,3.0,0
+3303,773,s-prd-777342523.jpeg,yes,n/a - virtual,scalp,,0,male,62,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,10-malignant-ak,9-malignant-sccis,3.0,3.0,0
+3309,776,s-prd-771165497.jpeg,yes,n/a - virtual,l 5th finger,,0,female,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,2.0,2.0,0
+3310,776,s-prd-772598835.jpeg,yes,n/a - virtual,l 2nd finger,,0,female,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,3.0,3.0,0
+3311,776,s-prd-772598837.jpeg,yes,n/a - virtual,l 5th finger,,,female,68,"ii fair skin, blue eyes",no,no,white,6-benign-other,,,2.0,2.0,0
+3325,780,s-prd-789032524.jpeg,yes,n/a - virtual,r eyebrow,,,male,38,"ii fair skin, blue eyes",no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,3.0,3.0,0
+3326,780,s-prd-789032525.jpeg,yes,n/a - virtual,r eyebrow,,,male,38,"ii fair skin, blue eyes",no,unknown,unknown,14-other-non-neoplastic/inflammatory/infectious,14-other-non-neoplastic/inflammatory/infectious,6-benign-other,3.0,3.0,0
+3334,782,s-prd-799021593.jpg,yes,n/a - virtual,l cheek,,0,male,59,iii darker white skin,no,no,white,2-benign-seborrheic keratosis,,,2.0,2.0,0
+3370,790,s-prd-812955655.jpg,yes,1ft,r upper back,,0,male,64,"ii fair skin, blue eyes",no,no,white,1-benign-melanocytic nevus,,,5.0,5.0,0
+3394,805,s-prd-818020395.jpg,yes,dscope,l lower leg,,0,male,81,"ii fair skin, blue eyes",yes,no,white,7-malignant-bcc,9-malignant-sccis,8-malignant-scc,15.0,10.0,0
+3398,805,s-prd-818019985.jpg,yes,1ft,l lower leg,,0,male,81,"ii fair skin, blue eyes",yes,no,white,7-malignant-bcc,9-malignant-sccis,8-malignant-scc,15.0,10.0,0
+3399,805,s-prd-818020135.jpg,yes,6in,l lower leg,,0,male,81,"ii fair skin, blue eyes",yes,no,white,7-malignant-bcc,9-malignant-sccis,8-malignant-scc,15.0,10.0,0
+3407,809,s-prd-817606150.jpeg,yes,6in,back,,0,male,64,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,6-benign-other,8-malignant-scc,5.0,5.0,0
+3408,809,s-prd-817606148.jpeg,yes,6in,back,,0,male,64,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,6-benign-other,8-malignant-scc,5.0,5.0,0
+3409,809,s-prd-817606152.jpeg,yes,n/a - virtual,back,,0,male,64,"ii fair skin, blue eyes",no,no,white,2-benign-seborrheic keratosis,6-benign-other,8-malignant-scc,5.0,5.0,0
+3410,814,s-prd-840869641.jpeg,yes,n/a - virtual,back,,0,male,60,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,6.0,5.0,0
+3411,814,s-prd-840869645.jpeg,yes,n/a - virtual,back,,0,male,60,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,6.0,5.0,0
+3412,814,s-prd-840869646.jpeg,yes,n/a - virtual,back,,0,male,60,"ii fair skin, blue eyes",yes,no,white,2-benign-seborrheic keratosis,1-benign-melanocytic nevus,,6.0,5.0,0
