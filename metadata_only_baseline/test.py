@@ -6,7 +6,7 @@ from tab_transformer_pytorch import TabTransformer
 from .utils import compute_metrics
 from data_processing.data import MIDASTabularDataset
 
-TEST_PATH = "manifests/test.csv"
+TEST_PATH = "manifests_record_split/test.csv"
 MODEL_PATH = "metadata_only_baseline/model/best_tabtransformer.pth"
 BATCH_SIZE = 32
 

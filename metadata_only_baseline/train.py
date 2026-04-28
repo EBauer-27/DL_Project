@@ -16,15 +16,15 @@ from data_processing.data import MIDASTabularDataset
 # Config
 # ============================================================
 IMG_ROOT = "data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
-TRAIN_PATH = "manifests/train.csv"
-VAL_PATH = "manifests/val.csv"
+TRAIN_PATH = "manifests_record_split/train.csv"
+VAL_PATH = "manifests_record_split/val.csv"
 
 BATCH_SIZE = 32
 EPOCHS = 13
 LR = 1e-4
 WEIGHT_DECAY = 1e-5
 SEED = 42
-SAVE_PATH = "metadata_only_baseline/best_tabtransformer.pth"
+SAVE_PATH = "metadata_only_baseline/model/best_tabtransformer.pth"
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

@@ -388,13 +388,13 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default="resnet18", choices=["resnet18", "resnet50"])
     parser.add_argument("--image_size", type=int, default=224)
 
-    parser.add_argument("--batch_size", type=int, default=None)
+    parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--epochs", type=int, default=35)
     parser.add_argument("--patience", type=int, default=8)
     parser.add_argument("--num_workers", type=int, default=2)
 
-    parser.add_argument("--lr", type=float, default=None)
-    parser.add_argument("--weight_decay", type=float, default=None)
+    parser.add_argument("--lr", type=float, default=1e-4)
+    parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--dropout", type=float, default=0.2)
     parser.add_argument("--threshold", type=float, default=0.5)
 

@@ -9,8 +9,8 @@ import torch.nn as nn
 
 
 "Perform different visualizations for evaluation of the tabtransform, feature importance, feature weights matrix, etc."
-TEST_PATH = "manifests/test.csv"
-MODEL_PATH = "metadata_only_baseline/best_tabtransformer.pth"
+TEST_PATH = "manifests_record_split/test.csv"
+MODEL_PATH = "metadata_only_baseline/model/best_tabtransformer.pth"
 BATCH_SIZE = 32
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

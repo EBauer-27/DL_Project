@@ -11,8 +11,8 @@ from metadata_only_baseline.utils import (
     plot_layerwise_attention_deviation,
 )
 
-TEST_PATH = "manifests/test.csv"
-MODEL_PATH = "metadata_only_baseline/best_tabtransformer.pth"
+TEST_PATH = "manifests_record_split/test.csv"
+MODEL_PATH = "metadata_only_baseline/model/best_tabtransformer.pth"
 BATCH_SIZE = 32
 OUTPUT_DIR = "metadata_only_baseline/results"
 
