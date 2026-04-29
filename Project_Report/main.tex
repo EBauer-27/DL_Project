@@ -170,10 +170,13 @@
 	
 	
 	\subsection{Explainability Evaluation}
+	The Grad-CAM heatmaps indicate that, in correctly predicted lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probalility of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.\\
+	When the images include background elements or a black microscope frame, the area of interest often shifts away from the lesion, typically resulting in incorrect predictions. However, as shown in Fig.~\ref{fig:FP_TN_background} metadata can guide the model to correctly classify the lesion, even though the image-baseline fails to identify the lesion.\\
+	Nevertheless, as illustrated in Fig.~\ref{fig:TP_FN}, the influence of metadata can also lead to incorrect predictions. While the image-only model correctly predicts a malignant case, the inclusion of metadata causes the multimodal model to missclassify it as benign.
 	
-	The Grad-CAM heatmaps reveal that, in correctly predicted lesion images, both the image-only and multimodal models mainly focus on the correct region in the image (Fig.~\ref{fig:grad_good}, \ref{fig:gradM_good}). However, when the image includes background elements or a black microscope frame, the area of interest shifts away from the lesion (Fig.~\ref{fig:grad_background}, ~\ref{fig:gradM_background}). In such cases, the confidence for correct predictions either decreases to just  above $50\%$ or the model fails to produce the correct prediction. The metadata importance plot of the multimodal (Fig.~\ref{fig:gradM_background}) indicated that, in these situations, metadata becomes more influential.
+	%However, when the image includes background elements or a black microscope frame, the area of interest shifts away from the lesion (Fig.~\ref{fig:grad_background}, ~\ref{fig:gradM_background}). In such cases, the confidence for correct predictions either decreases to just  above $50\%$ or the model fails to produce the correct prediction. The metadata importance plot of the multimodal (Fig.~\ref{fig:gradM_background}) indicated that, in these situations, metadata becomes more influential.
 	
-	Furthermore, the Grad-CAM evaluation highlights that some false negatives occur because the model focuses on the wrong lesion. As illustrated in Fig.~\ref{fig:grad_lesion}, when images contain multiple lesions, the model tends to concentrate on a different lesion, which likely leads to incorrect predictions. 
+	%Furthermore, the Grad-CAM evaluation highlights that some false negatives occur because the model focuses on the wrong lesion. As illustrated in Fig.~\ref{fig:grad_lesion}, when images contain multiple lesions, the model tends to concentrate on a different lesion, which likely leads to incorrect predictions. 
 	
 	
 	%Grad-CAM visualizations showed that correctly classified images were generally associated with activation regions around the lesion. In contrast, misclassified samples more frequently exhibited attention on background regions or non-relevant structures, indicating that the model failed to localize the lesion reliably.
@@ -247,113 +250,115 @@
 		\caption{MIDAS Dataset Overview}
 	\end{figure}
 	
-	\subsection{Confusion Matrix for Image-only Model}
+	\subsection{External Dataset}
 	
 	\begin{table}[H]
 		\centering
-		\caption{Confusion matrix counts for the evaluated model.}
-		\label{tab:confusion_matrix}
-		\begin{tabular}{lc}
+		\caption{Performance of all models on the PAD-UFES-20 dataset.}
+		\label{tab:pad_results}
+		\begin{tabular}{lccc}
 			\hline
-			\textbf{Metric} & \textbf{Count} \\
+			\textbf{Model} & \textbf{Balanced Acc.} & \textbf{F1-score} & \textbf{AUC} \\
 			\hline
 			
-			True Positives (TP) & 89 \\
-			True Negatives (TN) & 100 \\
-			False Positives (FP) & 62 \\
-			False Negatives (FN) & 28 \\
-			
+			Image-only ResNet18 & 0.7450 & 0.7692 & 0.8633 \\
+			Metadata-only TabTransformer & 0.5150 & 0.5611 & 0.5143 \\
+			Multimodal ResNet18 & 0.8300 & 0.8350 & 0.8919 \\
 			
 			\hline
 		\end{tabular}
 	\end{table}
 	
+%	\subsection{Confusion Matrix for Image-only Model}
+%	
+%	\begin{table}[H]
+%		\centering
+%		\caption{Confusion matrix counts for the evaluated model.}
+%		\label{tab:confusion_matrix}
+%		\begin{tabular}{lc}
+%			\hline
+%			\textbf{Metric} & \textbf{Count} \\
+%			\hline
+%			
+%			True Positives (TP) & 89 \\
+%			True Negatives (TN) & 100 \\
+%			False Positives (FP) & 62 \\
+%			False Negatives (FN) & 28 \\
+%			
+%			
+%			\hline
+%		\end{tabular}
+%	\end{table}
 	
-	\subsection{Performance metrics, if we want to use other/more}
-	\begin{table}[H]
-		\centering
-		\caption{Summary of model performance across evaluated settings.}
-		\label{tab:main_results_summary}
-		\begin{tabular}{llccccc}
-			\hline
-			\textbf{Model} & \textbf{Dataset} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{AUC} \\
-			\hline
-			
-			Image-only ResNet18 & MIDAS & 0.6703 & 0.5850 & 0.7350 & 0.6515 & \textbf{0.7678} \\
-			Metadata-only TabTransformer & MIDAS & 0.8253 & 0.7758 & 0.9014 & 0.8339 & 0.9158 \\
-			Multimodal ResNet18 & MIDAS & 0.7097 & 0.6406 & 0.7009 & 0.6694 & \textbf{0.7767} \\
-			
-			Image-only ResNet18 & PAD-UFES-20 & 0.7450 & 0.7450 & 0.8500 & 0.7692 & 0.8633 \\
-			Metadata-only TabTransformer & PAD-UFES-20 & 0.5150 & 0.5124 & 0.6200 & 0.5611 & 0.5143 \\
-			Multimodal ResNet18 & PAD-UFES-20 & 0.8300 & 0.8113 & 0.8600 & 0.8350 & 0.8919 \\
-			\hline
-			
-		\end{tabular}
-	\end{table}
+	
+%	\subsection{Performance metrics, if we want to use other/more}
+%	\begin{table}[H]
+%		\centering
+%		\caption{Summary of model performance across evaluated settings.}
+%		\label{tab:main_results_summary}
+%		\begin{tabular}{llccccc}
+%			\hline
+%			\textbf{Model} & \textbf{Dataset} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{AUC} \\
+%			\hline
+%			
+%			Image-only ResNet18 & MIDAS & 0.6703 & 0.5850 & 0.7350 & 0.6515 & \textbf{0.7678} \\
+%			Metadata-only TabTransformer & MIDAS & 0.8253 & 0.7758 & 0.9014 & 0.8339 & 0.9158 \\
+%			Multimodal ResNet18 & MIDAS & 0.7097 & 0.6406 & 0.7009 & 0.6694 & \textbf{0.7767} \\
+%			
+%			Image-only ResNet18 & PAD-UFES-20 & 0.7450 & 0.7450 & 0.8500 & 0.7692 & 0.8633 \\
+%			Metadata-only TabTransformer & PAD-UFES-20 & 0.5150 & 0.5124 & 0.6200 & 0.5611 & 0.5143 \\
+%			Multimodal ResNet18 & PAD-UFES-20 & 0.8300 & 0.8113 & 0.8600 & 0.8350 & 0.8919 \\
+%			\hline
+%			
+%		\end{tabular}
+%	\end{table}
 	
 	\subsection{Grad-CAM Results}
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{Img/TP_to_TP_sprd762048797_comparison.png}
-		\caption{Both models use a similar area of interest around the lesion. The multimodal has a higher confidence to predict the malignant due to metadata influence.}
-		\label{fig:TP_to_TP}
+		\includegraphics[width=0.7\textwidth]{Img/TP_to_TP_sprd762048797_comparison.png}
+		\caption{Both models use a similar area of interest around the lesion. The multimodal model has a higher malignant probability using metadata contribution.}
+		\label{fig:TP_TP}
 	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{Img/FP_to_TN_sprd457711507_comparison.png}
-		\caption{Both models use a similar area of interest around the lesion. The multimodal predicts the lesion correctly }
-		\label{fig:grad_good}
+		\includegraphics[width=0.7\textwidth]{Img/FP_to_TN_sprd457711507_comparison.png}
+		\caption{Both models use a similar area of interest around the lesion. The multimodal model predicts the lesion correctly using metadata contribution.}
+		\label{fig:FP_TN}
 	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{Img/FP_to_TN_sprd486848514_comparison.png}
-		\caption{Wrong Lesion}
-		\label{fig:grad_lesion}
+		\includegraphics[width=0.7\textwidth]{Img/FP_to_TN_sprd486848514_comparison.png}
+		\caption{Both model get distracted by the background and not focus on the lesion. The image-only model predicts a malignant with a nearly $50\%$ confidence, while the multimodal model correctly predicts an benign case due to the metadata contribution.}
+		\label{fig:FP_TN_background}
 	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{Img/TP_to_FN_sprd640509576_comparison.png}
-		\caption{Good}
-		\label{fig:gradM_good}
+		\includegraphics[width=0.7\textwidth]{Img/TP_to_FN_sprd640509576_comparison.png}
+		\caption{Both models use a similar area of interest around the lesion. The metadata cause the multimodal model to falsely predict a benign case, while the image only model correctly predicts a malignant case.}
+		\label{fig:TP_FN}
 	\end{figure}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{Img/TN_to_FP_sprd505272095_comparison.png}
-		\caption{FP because of Background}
-		\label{fig:gradM_background}
-	\end{figure}
+	%\begin{figure}[H]
+	%	\centering
+	%	\includegraphics[width=\textwidth]{Img/TN_to_FP_sprd505272095_comparison.png}
+	%	\caption{FP because of Background}
+	%	\label{fig:gradM_background}
+	%\end{figure}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{Img/TP_to_FN_sprd401900819_comparison.png}
-		\caption{FP because of Background}
-		\label{fig:gradM}
-	\end{figure}
+	%\begin{figure}[H]
+	%	\centering
+	%	\includegraphics[width=\textwidth]{Img/TP_to_FN_sprd401900819_comparison.png}
+	%	\caption{FP because of Background}
+	%	\label{fig:gradM}
+	%\end{figure}
 	
 	
-	\subsection{External Dataset}
 
-	\begin{table}[H]
-	\centering
-	\caption{Performance of all models on the PAD-UFES-20 dataset.}
-	\label{tab:pad_results}
-	\begin{tabular}{lccc}
-		\hline
-		\textbf{Model} & \textbf{Balanced Acc.} & \textbf{F1-score} & \textbf{AUC} \\
-		\hline
-		
-		Image-only ResNet18 & 0.7450 & 0.7692 & 0.8633 \\
-		Metadata-only TabTransformer & 0.5150 & 0.5611 & 0.5143 \\
-		Multimodal ResNet18 & 0.8300 & 0.8350 & 0.8919 \\
-		
-		\hline
-	\end{tabular}
-	\end{table}
 
 	
 \end{document}
