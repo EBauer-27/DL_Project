@@ -167,7 +167,7 @@
 	
 	In comparison, the image-only ResNet18 and the multimodal model show similar performance, with AUC values of $77\%$ and $78\%$, respectively. The multimodal model achieves a slightly higher balanced accuracy. This suggests that the inclusion of metadata provides a modest complementary benefit, although the overall improvement remains limited.
 	
-	In Figure ~ref{gradcam_comparison_numbers} we present a more analytical explanation of the influence of the metadata on the models and how they shift the predictions in the two image based models.
+	In Figure~\ref{gradcam_comparison_numbers} we present a more analytical explanation of the influence of the metadata on the models and how they shift the predictions in the two image based models.
 
 	The comparatively lower performance of the image-based models may be attributed to the quality of the MIDAS images, which often contain substantial background noise and inconsistent cropping. This makes it more difficult for the model to identify the relevant lesion on the image.
 	
@@ -190,7 +190,6 @@
 	%This effect was particularly pronounced in images with substantial background clutter or black microscope frames, where the model’s attention often shifted away from the lesion area. Additionally, for patients with multiple images, predictions were more consistent when the lesion was clearly centered and well-cropped. When the lesion was poorly framed or less visible, the model’s confidence decreased, suggesting a reliance on clear and localized visual cues for accurate classification.
 	
 	%Overall, these observations support the hypothesis that image quality and cropping inconsistencies significantly impact the performance of image-based models.
-	
 	
 	
 	
@@ -331,12 +330,6 @@
 			Improved   & 34  & 12.36\% \\
 			Worsened   & 25  & 9.09\% \\
 			Unchanged  & 216 & 78.55\% \\
-			\hline
-			\multicolumn{3}{c}{\textit{Accuracy on Matched Lesion Pairs}} \\
-			ResNet image-only correct & 186 / 275 & 67.64\% \\
-			Multimodal correct        & 195 / 275 & 70.91\% \\
-			Accuracy difference       & ---       & +3.27 pp \\
-			\hline
 		\end{tabular}
 		\label{tab:resnet_multimodal_comparison}
 	\end{table}
