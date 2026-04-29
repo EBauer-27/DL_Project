@@ -345,7 +345,7 @@ def plot_case_figure(
         f"{case_type} | "
         f"GT: {true_name} | "
         f"Pred: {pred_name} | "
-        f"Confidence: {prob:.4f}"
+        f"P(malignant): {prob:.4f}"
     )
 
     fig.suptitle(title, fontsize=13, fontweight="bold")
