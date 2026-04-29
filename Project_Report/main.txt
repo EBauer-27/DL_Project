@@ -197,7 +197,7 @@
 	
 	
 	\subsection{Generalization to External Dataset}
-	As shown in Table~\ref{tab:pad_results}, the image-only model achieves improved performance on the external dataset. This could be attributed to higher image quality and more consistent lesion-centered cropping, which reduces background noise. This gain is also reflected in the multimodal model, which has the highest AUC of $89\%$. However, the metadata-only model performance significantly decreases. This drop is likely due to a feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20.
+	As shown in Table~\ref{tab:pad_results}, the image-only model achieves improved performance on the external dataset. This is likely due to a higher image quality and more consistent lesion-centered cropping, which reduces background noise. This improved performes is also reflected in the multimodal model, which has the highest AUC of $89\%$. However, the metadata-only model performance significantly decreases. This is likely due to feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20. 
 	%The multimodal model achieved the best performance (AUC 0.8919), followed by the image-only model (AUC 0.8633). The metadata-only model performed close to random, indicating limited transferability of tabular features across datasets. This is likely due to feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20. 
 	
 
