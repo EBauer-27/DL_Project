@@ -171,7 +171,7 @@ def create_visualization(
     gradcam_heatmap,
     ground_truth,
     pred_label,
-    confidence,
+    prob_malignant,
     confusion_type,
     save_path
 ):
@@ -197,7 +197,7 @@ def create_visualization(
         f"{confusion_type} | "
         f"GT: {ground_truth} | "
         f"Pred: {pred_label} | "
-        f"Confidence: {confidence:.4f}"
+        f"P(malignant): {prob_malignant:.4f}"
     )
 
     fig.suptitle(title, fontsize=13, fontweight="bold")
@@ -237,11 +237,10 @@ def process_image(model, gradcam_handler, image_path, ground_truth_label, device
     if logits.shape[1] == 1:
         prob_malignant = torch.sigmoid(logits[0, 0]).item()
         pred_idx = 1 if prob_malignant > 0.5 else 0
-        confidence = max(prob_malignant, 1 - prob_malignant)
     else:
         probs = torch.softmax(logits, dim=1)
+        prob_malignant = probs[0, 1].item()
         pred_idx = logits.argmax(dim=1).item()
-        confidence = probs[0, pred_idx].item()
 
     pred_label = class_names[pred_idx]
     confusion_type = get_confusion_type(ground_truth_label, pred_label)
@@ -261,12 +260,12 @@ def process_image(model, gradcam_handler, image_path, ground_truth_label, device
         gradcam_heatmap,
         ground_truth_label,
         pred_label,
-        confidence,
+        prob_malignant,
         confusion_type,
         str(output_path)
     )
 
-    return output_path, pred_label, confidence, confusion_type
+    return output_path, pred_label, prob_malignant, confusion_type
 
 
 def main():
@@ -311,7 +310,7 @@ def main():
             if result:
                 success_count += 1
 
-                output_path, pred_label, confidence, confusion_type = result
+                output_path, pred_label, prob_malignant, confusion_type = result
                 counts[confusion_type] += 1
 
                 status = "✓" if ground_truth_label == pred_label else "✗"
@@ -322,7 +321,7 @@ def main():
                     f"GT={ground_truth_label:9s} "
                     f"Pred={pred_label:9s} "
                     f"Type={confusion_type:3s} "
-                    f"Conf={confidence:.4f}"
+                    f"P(mal)={prob_malignant:.4f}"
                 )
 
         except Exception as e:
