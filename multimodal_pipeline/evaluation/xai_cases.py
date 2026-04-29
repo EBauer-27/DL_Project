@@ -24,7 +24,7 @@ from multimodal_pipeline.multimodal import MultimodalSkinClassifier
 TEST_PATH = "manifests_record_split/test.csv"
 IMG_ROOT = "MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
 MODEL_PATH = "multimodal_pipeline/model/best_multimodal_model_resnet18.pth"
-OUTPUT_DIR = "multimodal_pipeline/results/xai_cases_newtitle"
+OUTPUT_DIR = "multimodal_pipeline/results/xai_cases_without_original/"
 
 BATCH_SIZE = 32
 THRESHOLD = 0.5
@@ -317,20 +317,20 @@ def plot_case_figure(
     true_name = "malignant" if label == 1 else "benign"
     pred_name = "malignant" if pred == 1 else "benign"
 
-    fig = plt.figure(figsize=(16, 5))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.0, 1.25])
+    fig = plt.figure(figsize=(12, 5))       # with original image figsize=(16,5)
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.0, 1.5])  # with original ratios [1.0, 1.0, 1.5]
 
-    ax1 = fig.add_subplot(gs[0, 0])
-    ax1.imshow(img_np)
-    ax1.set_title("Original Image", fontsize=12)
-    ax1.axis("off")
+    # ax1 = fig.add_subplot(gs[0, 0])
+    # ax1.imshow(img_np)
+    # ax1.set_title("Original Image", fontsize=12)
+    # ax1.axis("off")
 
-    ax2 = fig.add_subplot(gs[0, 1])
+    ax2 = fig.add_subplot(gs[0, 0])
     ax2.imshow(overlay_np)
     ax2.set_title("Grad-CAM Overlay", fontsize=12)
     ax2.axis("off")
 
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[0, 1])
     ax3.barh(
         local_imp_top["feature"],
         local_imp_top["delta_prob"],
