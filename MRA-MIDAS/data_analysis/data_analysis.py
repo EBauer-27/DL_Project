@@ -6,10 +6,10 @@ from pathlib import Path
 # =========================
 # Paths
 # =========================
-script_dir = Path(__file__).resolve().parent
-excel_file = script_dir / "release_midas.xlsx"
-output_plot = script_dir / "midas_overview_figure.png"
-output_locations = script_dir / "location_df.csv"
+script_dir = Path(__file__).resolve().parents[1]
+excel_file = script_dir / "midasmultimodalimagedatasetforaibasedskincancer/release_midas.xlsx"
+output_plot = script_dir / "data_analysis/midas_overview_figure.png"
+output_locations = script_dir / "data_analysis/location_df.csv"
 
 # =========================
 # Load data
@@ -200,28 +200,102 @@ axes[1, 1].set_title("Age by Diagnosis", fontsize=15, pad=12)
 axes[1, 1].set_ylabel("Age", fontsize=12)
 
 # =========================
-# Plot 6: Classified vs unclassified
+# Plot 6: Correlation with malignancy
 # =========================
 # =========================
-# Plot 6: Classified vs unclassified
+# Plot 6: Metadata correlation with malignancy
 # =========================
-wedges3, _, _ = axes[1, 2].pie(
-    classification_counts.values,
-    autopct=autopct_with_n(classification_counts.values),
-    startangle=90,
-    textprops={"fontsize": 11}
+corr_df = data_classified.copy()
+
+# Numeric features
+corr_df["age"] = pd.to_numeric(corr_df["midas_age"], errors="coerce")
+corr_df["length_mm"] = pd.to_numeric(corr_df["length_(mm)"], errors="coerce")
+corr_df["width_mm"] = pd.to_numeric(corr_df["width_(mm)"], errors="coerce")
+corr_df["area_mm2"] = corr_df["length_mm"] * corr_df["width_mm"]
+
+metadata_cols = [
+    "age",
+    "length_mm",
+    "width_mm",
+    "area_mm2",
+    "midas_gender",
+    "midas_ethnicity",
+    "midas_race",
+    "midas_fitzpatrick",
+    "midas_location",
+    "midas_melanoma",
+    "midas_distance",
+]
+
+corr_input = corr_df[metadata_cols + ["binary_label"]].copy()
+
+# One-hot encode categorical metadata
+corr_input = pd.get_dummies(
+    corr_input,
+    columns=[
+        "midas_gender",
+        "midas_ethnicity",
+        "midas_race",
+        "midas_fitzpatrick",
+        "midas_location",
+        "midas_melanoma",
+        "midas_distance",
+    ],
+    drop_first=False
 )
-axes[1, 2].set_title("Classified vs Unclassified", fontsize=15, pad=12)
-axes[1, 2].legend(
-    wedges3,
-    classification_counts.index,
-    title="Status",
-    loc="center left",
-    bbox_to_anchor=(1.0, 0.5),
-    fontsize=11,
-    title_fontsize=11,
-    frameon=False
+
+correlations = {}
+
+for col in corr_input.columns:
+    if col == "binary_label":
+        continue
+
+    valid = corr_input[[col, "binary_label"]].dropna()
+
+    if len(valid) > 1 and valid[col].nunique() > 1:
+        correlations[col] = valid[col].corr(valid["binary_label"])
+
+corr_series = (
+    pd.Series(correlations)
+    .dropna()
+    .sort_values(key=lambda x: x.abs(), ascending=False)
+    .head(10)
+    .sort_values()
 )
+
+# Clean labels for readability
+clean_labels = (
+    corr_series.index
+    .str.replace("midas_", "", regex=False)
+    .str.replace("_", " ", regex=False)
+    .str.replace("gender ", "sex: ", regex=False)
+    .str.replace("ethnicity ", "ethnicity: ", regex=False)
+    .str.replace("race ", "race: ", regex=False)
+    .str.replace("fitzpatrick ", "fitzpatrick: ", regex=False)
+    .str.replace("location ", "location: ", regex=False)
+    .str.replace("melanoma ", "melanoma history: ", regex=False)
+    .str.replace("distance ", "distance: ", regex=False)
+)
+
+bars_corr = axes[1, 2].barh(clean_labels, corr_series.values)
+
+axes[1, 2].axvline(0, color="black", linewidth=1)
+axes[1, 2].set_title("Top Metadata Correlations with Malignancy", fontsize=15, pad=12)
+axes[1, 2].set_xlabel("Pearson Correlation", fontsize=12)
+axes[1, 2].tick_params(axis="y", labelsize=9)
+axes[1, 2].tick_params(axis="x", labelsize=10)
+
+for bar in bars_corr:
+    width = bar.get_width()
+    axes[1, 2].text(
+        width,
+        bar.get_y() + bar.get_height() / 2,
+        f"{width:.2f}",
+        va="center",
+        ha="left" if width >= 0 else "right",
+        fontsize=9
+    )
+
 # =========================
 # Save figure
 # =========================

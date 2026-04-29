@@ -10,14 +10,21 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from PIL import Image
 
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT))
+
+
 from data_processing.data import MIDASMultimodalDataset
 from multimodal_pipeline.multimodal import MultimodalSkinClassifier
 
 
 TEST_PATH = "manifests_record_split/test.csv"
-IMG_ROOT = "data/MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
+IMG_ROOT = "MRA-MIDAS/midasmultimodalimagedatasetforaibasedskincancer/"
 MODEL_PATH = "multimodal_pipeline/model/best_multimodal_model_resnet18.pth"
-OUTPUT_DIR = "multimodal_pipeline/results/xai_cases_resnet18"
+OUTPUT_DIR = "multimodal_pipeline/results/xai_cases_newtitle"
 
 BATCH_SIZE = 32
 THRESHOLD = 0.5
@@ -306,44 +313,46 @@ def plot_case_figure(
 
     local_imp_top = local_imp_df.head(8).iloc[::-1]
 
-    raw_row = dataset.df.iloc[idx]
-    subtype = infer_subtype_from_path(raw_row.get("midas_path", ""))
     case_type = case_row["case_type"]
-
-    fig = plt.figure(figsize=(15, 5))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.0, 1.2])
-
-    ax1 = fig.add_subplot(gs[0, 0])
-    ax1.imshow(img_np)
-    ax1.axis("off")
-    ax1.set_title("Original image")
-
-    ax2 = fig.add_subplot(gs[0, 1])
-    ax2.imshow(overlay_np)
-    ax2.axis("off")
-    ax2.set_title("Grad-CAM overlay")
-
-    ax3 = fig.add_subplot(gs[0, 2])
-    colors = ["tab:red" if v > 0 else "tab:blue" for v in local_imp_top["delta_prob"]]
-    ax3.barh(local_imp_top["feature"], local_imp_top["delta_prob"], color=colors)
-    ax3.axvline(0.0, color="black", linewidth=1)
-    ax3.set_title("Local metadata importance")
-    ax3.set_xlabel("Δ predicted probability\n(remove / neutralize feature)")
-    ax3.tick_params(axis="y", labelsize=9)
-
     true_name = "malignant" if label == 1 else "benign"
     pred_name = "malignant" if pred == 1 else "benign"
 
-    fig.suptitle(
-        f"{case_type} | True: {true_name} | Pred: {pred_name} | "
-        f"Prob(malignant)={prob:.3f} | subtype={subtype}",
-        fontsize=13
+    fig = plt.figure(figsize=(16, 5))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.0, 1.25])
+
+    ax1 = fig.add_subplot(gs[0, 0])
+    ax1.imshow(img_np)
+    ax1.set_title("Original Image", fontsize=12)
+    ax1.axis("off")
+
+    ax2 = fig.add_subplot(gs[0, 1])
+    ax2.imshow(overlay_np)
+    ax2.set_title("Grad-CAM Overlay", fontsize=12)
+    ax2.axis("off")
+
+    ax3 = fig.add_subplot(gs[0, 2])
+    ax3.barh(
+        local_imp_top["feature"],
+        local_imp_top["delta_prob"],
+    )
+    ax3.axvline(0.0, color="black", linewidth=1)
+    ax3.set_title("Local Metadata Importance", fontsize=12)
+    ax3.set_xlabel("Δ Predicted Probability", fontsize=11)
+    ax3.tick_params(axis="y", labelsize=9)
+    ax3.tick_params(axis="x", labelsize=9)
+
+    title = (
+        f"{case_type} | "
+        f"GT: {true_name} | "
+        f"Pred: {pred_name} | "
+        f"Confidence: {prob:.4f}"
     )
 
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    fig.suptitle(title, fontsize=13, fontweight="bold")
 
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
 
 # ------------------------------------------------------------
 # Main
