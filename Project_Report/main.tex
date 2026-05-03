@@ -15,8 +15,10 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{natbib}
 
 \usepackage{todonotes}
+
 
 
 % =========================
@@ -138,7 +140,7 @@
 	
 	In comparison, the image-only ResNet18 and the multimodal model show similar performance, with AUC values of $77\%$ and $78\%$, respectively. The multimodal model achieves a slightly higher balanced accuracy. This suggests that the inclusion of metadata provides a modest complementary benefit, although the overall improvement remains limited.
 	
-	In Table~\ref{tab:gradcam_comparison_numbers} we present a more detailed analysis of how metadata influences the models and how they shift the predictions in the two image based models.
+	In Table~\ref{tab:gradcam_comparison_numbers} we present a more detailed analysis of how metadata influences the models and how they shift the predictions in the two image based models. The most important metadata features used by the multimodal model are patient age, lesion location and size, as well as fitzpatrick type.
 
 	The comparatively lower performance of the image-based models may be attributed to the quality of the MIDAS images, which often contain substantial background noise and inconsistent cropping. This makes it more difficult for the model to identify the relevant lesion on the image.
 	
@@ -149,8 +151,11 @@
 
 	When the images include background elements or a black microscope frame, the area of interest often shifts away from the lesion, typically resulting in incorrect predictions. However, as shown in Fig.~\ref{fig:FP_TN_background} metadata can guide the model to correctly classify the lesion, even though the image-baseline fails to identify the lesion.
 
+	This suggests that metadata may act as a compensatory signal in cases where the visual information is ambiguous or image quality is limited, helping the multimodal model stabilize its predictions. Among the metadata attributes, patient age, lesion location, lesion size, and Fitzpatrick skin type appeared to have the strongest influence on the multimodal model’s prediction behavior.
+
 	Nevertheless, as illustrated in Fig.~\ref{fig:TP_FN}, the influence of metadata can also lead to incorrect predictions. While the image-only model correctly predicts a malignant case, the inclusion of metadata causes the multimodal model to missclassify it as benign.
 	
+
 	%However, when the image includes background elements or a black microscope frame, the area of interest shifts away from the lesion (Fig.~\ref{fig:grad_background}, ~\ref{fig:gradM_background}). In such cases, the confidence for correct predictions either decreases to just  above $50\%$ or the model fails to produce the correct prediction. The metadata importance plot of the multimodal (Fig.~\ref{fig:gradM_background}) indicated that, in these situations, metadata becomes more influential.
 	
 	%Furthermore, the Grad-CAM evaluation highlights that some false negatives occur because the model focuses on the wrong lesion. As illustrated in Fig.~\ref{fig:grad_lesion}, when images contain multiple lesions, the model tends to concentrate on a different lesion, which likely leads to incorrect predictions. 
@@ -180,7 +185,7 @@
 	\section{Conclusion}
 	% ============================================================
 	As our results show, including patient metadata in the decision-making process of a deep classification model can improve performance in specific cases, particularly when image quality is limited, but its overall contribution depends strongly on dataset characteristics and feature alignment. Especially in cases where the lesion is not the primary focus, metadata can be a determining factor in correctly classifying the lesion. 
-	
+	Future work should further evaluate the robustness of these findings across larger and more diverse clinical datasets. In addition, alternative multimodal fusion strategies could be investigated to better understand how metadata can be integrated and whether the observed effects correspond to clinically meaningful patterns.
 	
 	\newpage
 	{\small
@@ -208,13 +213,13 @@
 	\begin{table}[h]
 		\centering
 		\caption{Chosen Hyperparameter based on Optuna optimization}
+		\label{tab:Hyperopt}
 		\begin{tabular}{lccc}
 			\toprule
 			\textbf{Model} & \textbf{Batch Size} & \textbf{Learning Rate} & \textbf{Weight Decay}\\
 			\midrule
 			ResNet18 & 32 & 4.38e-5 & 4.97e-5 \\
 			\bottomrule
-			\label{tab:Hyperopt}
 		\end{tabular}
 	\end{table}
 	
@@ -292,7 +297,6 @@
 	\subsection{Influence of Metadata on the Predictions}
 	\begin{table}[h]
 		\centering
-		\caption{Comparison of ResNet image-only and multimodal classification performance for benign/malignant skin lesion diagnosis.}
 			\begin{tabular}{lcc}
 			\hline
 			\textbf{Metric} & \textbf{Count} & \textbf{Percentage} \\
@@ -302,6 +306,8 @@
 			Worsened   & 25  & 9.09\% \\
 			Unchanged  & 216 & 78.55\% \\
 		\end{tabular}
+		\caption{Comparison of ResNet image-only and multimodal classification performance for benign/malignant skin lesion diagnosis.}
+
 		\label{tab:gradcam_comparison_numbers}
 	\end{table}
 
