@@ -57,8 +57,9 @@
 	
 	Multimodal approaches that combine image data with additional patient information have recently gained attention, as they provide a more comprehensive representation of clinical cases \citep{hao2025}. However, it remains unclear whether such models rely on clinically meaningful signals or instead exploit dataset-specific correlations present in metadata.
 	
-	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. However, performance metrics alone are not sufficient to explain the underlying decision-making mechanisms of the model. Therefore, in addition to analyzing the overall classification results, we investigated which metadata features contribute most strongly to the predictions and how the integration of metadata affects the model’s visual attention. 
-	We complemented the quantitative performance analysis with explainability methods to better understand how the models reached their predictions.
+	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. To further understand the underlying decision-making of the model we investigated which metadata features contribute most strongly to the predictions, where the models visual attention lies, and how it is effected by the integration of metadata. 
+	%However, performance metrics alone are not sufficient to explain the underlying decision-making mechanisms of the model. Therefore, in addition to analyzing the overall classification results, we investigated which metadata features contribute most strongly to the predictions and how the integration of metadata affects the model’s visual attention. 
+	%We complemented the quantitative performance analysis with explainability methods to better understand how the models reached their predictions.
 	
 	
 	% ============================================================
@@ -69,31 +70,32 @@
 	We compared three architectures for binary skin lesion classification: an image-only ResNet18, a metadata-only TabTransformer, and a multimodal model combining both modalities.
 	
 	\subsubsection{Image-Only Baseline}
-	For the image-only baseline we used a Residual Neural Network with 18 layers (ResNet18). ResNet employs residual skip connections, which facilitate the training of deeper networks by mitigating vanishing gradients~\cite{he2015deepresiduallearningimage}. 
+	For the image-only baseline we used a Residual Neural Network with 18 layers (ResNet18)~\cite{he2015deepresiduallearningimage}. %ResNet employs residual skip connections, which facilitate the training of deeper networks by mitigating vanishing gradients. 
 	We selected ResNet18 after it achieved the best validation performance on our dataset, in comparison to VGGNet and GoogLeNet. Further, this architecture is a commonly used approach for skin lesion classification in literature \citep{7893267, yu2025ai, wu2022skin}.
 	
 	
 	\subsubsection{Metadata-Only Baseline}
 	
-	For the metadata-only baseline, we used a TabTransformer, which embeds categorical variables as tokens and models feature interactions through self-attention~\cite{huang2020tabtransformer}. Numerical features were standardized, while categorical encodings were learned from the training set and reused for validation and testing.
+	For the metadata-only baseline, we used a TabTransformer, which embeds categorical variables as tokens and models feature interactions through self-attention~\cite{huang2020tabtransformer}. %Numerical features were standardized, while categorical encodings were learned from the training set and reused for validation and testing.
 	
 	In addition to serving as a strong standalone baseline, in literature this architecture is also used as a metadata encoder for the multimodal models. Since the TabTransformer produces contextualised feature representations, it allows metadata to be integrated more effectively with image features during multimodal fusion~\cite{sravani2025transformer}.
 	
 	\subsubsection{Multimodal Model}
 	
-	The multimodal model combines an image encoder and a metadata encoder into a joint classification framework, using the previously mentioned models.
+	The multimodal model combines the image encoder and metadata encoder into a joint classification framework, using the previously mentioned models.
 	
-	The two modalities were fused using a cross-attention mechanism~\citep{cai2022multimodal}, where image features attended to the metadata representations. This allowed the model to incorporate patient-level information into the visual feature space and condition predictions on both modalities. The fused representation is then passed to a classification head for the final prediction. A conceptual overview is shown in Figure~\ref{fig:multimodal_architecture}.
+	As shown in Fig.~\ref{fig:multimodal_architecture}, the two modalities were fused using a cross-attention mechanism~\citep{cai2022multimodal}, where image features attended to the metadata representations. This allowed the model to incorporate patient-level information into the visual feature space and condition predictions on both modalities. The fused representation is then passed to a classification head for the final prediction. %A conceptual overview is shown in Figure~\ref{fig:multimodal_architecture}.
 	
-	In addition to enabling multimodal learning, the attention weights could be used to analyze how metadata features influence the model’s predictions, providing insight into the decision-making process.
+	%In addition to enabling multimodal learning, the attention weights could be used to analyze how metadata features influence the model’s predictions, providing insight into the decision-making process.
 	
 	
 	\subsection{Training Setup}
 	\paragraph{Dataset} 
-	We used the MRA-MIDAS dataset~\citep{midas2023}, which contains dermoscopic and clinical images paired with patient metadata. Overall the dataset contains $3216$ images from $733$ patients, with $1500$ benign and $1419$ malignant labeled cases. The metadata contain patient-level information such as age, ethnicity, and sex, as well as lesion-specific attributes including size, anatomical location, and textual descriptions, and up to three additional clinical impressions per sample. Further information on the dataset distributions, such as patients age, skin lesion positions and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}. 
+	We used the MRA-MIDAS dataset~\citep{midas2023}, which contains dermoscopic and clinical images of equaliy distributed malignant and benign cases paired with patient metadata such as age, ethnicity, and sex. Further the metadata also include lesion-specific attributes including size, anatomical location, and textual descriptions. Further information on the dataset and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}.  
+	%Overall the dataset contains $3216$ images from $733$ patients, with $1500$ benign and $1419$ malignant labeled cases. The metadata contain patient-level information such as age, ethnicity, and sex, as well as lesion-specific attributes including size, anatomical location, and textual descriptions, and up to three additional clinical impressions per sample. Further information on the dataset distributions, such as patients age, skin lesion positions and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}. 
 	
 	\paragraph{Preprocessing}
-	In the preprocessing, we converted the ground-truth label into malignant and benign cases for binary classification. Samples without labels were excluded from the dataset. Further,the labeled data were split into training, validation, and test sets ($80\%$-$10\%$-$10\%$). To avoid data leakage, the dataset was split on a patient level.
+	In the preprocessing, we converted the ground-truth label into malignant and benign cases for binary classification. Samples without labels were excluded from the dataset. Further, the labeled data were split into training, validation, and test sets ($80\%$-$10\%$-$10\%$). To avoid data leakage, the dataset was split on a patient level.
 	
 	\paragraph{Implementation Details} 
 	Both the image-only as well as the multimodal model were trained using Binary Cross-entropy loss (BCEWithLogitsLoss), as it is a standard choice for modeling and evaluating predicted probabilities in binary classification tasks~\cite{binary_cross_entropy_ruby2020}. A weight of positive examples was applied to address class imbalance.
@@ -138,7 +140,8 @@
 		\end{tabular}
 	\end{table}
 	
-	In comparison, the image-only ResNet18 and the multimodal model show similar performance, with AUC values of $77\%$ and $78\%$, respectively. The multimodal model achieves a slightly higher balanced accuracy. This suggests that the inclusion of metadata provides a modest complementary benefit, although the overall improvement remains limited.
+	In comparison, the image-only ResNet18 and the multimodal model show similar performance%, with AUC values of $77\%$ and $78\%$, respectively. 
+	However, the multimodal model achieves a slightly higher balanced accuracy, which suggests that the inclusion of metadata provides a modest complementary benefit, although the overall improvement remains limited.
 	
 	In Table~\ref{tab:gradcam_comparison_numbers} we present a more detailed analysis of how metadata influences the models and how they shift the predictions in the two image based models. The most important metadata features used by the multimodal model are patient age, lesion location and size, as well as fitzpatrick type.
 
@@ -147,7 +150,7 @@
 
 	
 	\subsection{Explainability Evaluation}
-	The Grad-CAM heatmaps indicate that, in correctly predicted lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probability of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.
+	The Grad-CAM heatmaps indicate that, in correctly predicts lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probability of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.
 
 	When the images include background elements or a black microscope frame, the area of interest often shifts away from the lesion, typically resulting in incorrect predictions. However, as shown in Fig.~\ref{fig:FP_TN_background} metadata can guide the model to correctly classify the lesion, even though the image-baseline fails to identify the lesion.
 
@@ -172,7 +175,8 @@
 	
 	
 	\subsection{Generalization to External Dataset}
-	As shown in Table~\ref{tab:pad_results}, the image-only model achieves improved performance on the external dataset. This could be attributed to higher image quality and more consistent lesion-centered cropping, which reduces background noise. This gain is also reflected in the multimodal model, which has the highest AUC of $89\%$. However, the metadata-only model performance significantly decreases. This drop is likely due to a feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20.
+	As shown in Table~\ref{tab:pad_results}, the image-only model achieves improved performance on the external dataset. This could be attributed to higher image quality and more consistent lesion-centered cropping, which reduces background noise. %This gain is also reflected in the multimodal model, which has the highest AUC of $89\%$. 
+	However, the metadata-only model performance significantly decreases. This drop is likely due to a feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20.
 	%The multimodal model achieved the best performance (AUC 0.8919), followed by the image-only model (AUC 0.8633). The metadata-only model performed close to random, indicating limited transferability of tabular features across datasets. This is likely due to feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20. 
 	
 
@@ -238,15 +242,15 @@
 		\caption{Performance of all models on the PAD-UFES-20 dataset.}
 		\label{tab:pad_results}
 		\begin{tabular}{lccc}
-			\hline
+			\toprule
 			\textbf{Model} & \textbf{Balanced Acc.} & \textbf{F1-score} & \textbf{AUC} \\
-			\hline
+			\midrule
 			
 			Image-only ResNet18 & 0.7450 & 0.7692 & 0.8633 \\
 			Metadata-only TabTransformer & 0.5150 & 0.5611 & 0.5143 \\
 			Multimodal ResNet18 & 0.8300 & 0.8350 & 0.8919 \\
 			
-			\hline
+			\bottomrule
 		\end{tabular}
 	\end{table}
 	
@@ -297,16 +301,18 @@
 	\subsection{Influence of Metadata on the Predictions}
 	\begin{table}[h]
 		\centering
+		\caption{Comparison of ResNet image-only and multimodal classification performance for benign/malignant skin lesion diagnosis.}
 			\begin{tabular}{lcc}
-			\hline
+			\toprule
 			\textbf{Metric} & \textbf{Count} & \textbf{Percentage} \\
-			\hline
+			\midrule
 			\multicolumn{3}{c}{\textit{Prediction Changes from ResNet to Multimodal}} \\
 			Improved   & 34  & 12.36\% \\
 			Worsened   & 25  & 9.09\% \\
 			Unchanged  & 216 & 78.55\% \\
+			\bottomrule
 		\end{tabular}
-		\caption{Comparison of ResNet image-only and multimodal classification performance for benign/malignant skin lesion diagnosis.}
+		
 
 		\label{tab:gradcam_comparison_numbers}
 	\end{table}
