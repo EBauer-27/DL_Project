@@ -45,7 +45,7 @@
 	\maketitle
 	
 	
-	\vspace{-1em}
+	\vspace{-1.5em}
 	
 	
 	% ============================================================
@@ -57,7 +57,7 @@
 	
 	Multimodal approaches that combine image data with additional patient information have recently gained attention, as they provide a more comprehensive representation of clinical cases \citep{hao2025}. However, it remains unclear whether such models rely on clinically meaningful signals or instead exploit dataset-specific correlations present in metadata.
 	
-	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. To further understand the underlying decision-making of the model we investigated which metadata features contribute most strongly to the predictions, where the models visual attention lies, and how it is effected by the integration of metadata. 
+	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. To further understand the underlying decision-making of the model we investigated which metadata features contribute most strongly to the predictions, where the models visual attention lies, and how it is effected by the integration of metadata. The code is available at \url{https://github.com/EBauer-27/DL_Project.git}.
 	%However, performance metrics alone are not sufficient to explain the underlying decision-making mechanisms of the model. Therefore, in addition to analyzing the overall classification results, we investigated which metadata features contribute most strongly to the predictions and how the integration of metadata affects the model’s visual attention. 
 	%We complemented the quantitative performance analysis with explainability methods to better understand how the models reached their predictions.
 	
@@ -105,8 +105,7 @@
 	Training images were resized to $224 \times 224$ and augmented using random flips to increase the diversity of the training data and reduce overfitting. Additionally, the image-only model used rotation and color jitter. Those stronger augmentations were not applied to the multimodal to prevent a mismatch between image and metadata. Validation and test images were only resized and normalized.
 	
 	\paragraph{Evaluation}
-	We evaluated all models using Area under Curve (AUC), balanced accuracy, and F1-score. Model behavior was analyzed using Grad-CAM and cross-attention weights to assess the influence of metadata on predictions.
-	
+	We evaluated all models using Area under Curve (AUC), balanced accuracy, and F1-score. Model behavior was analyzed using Grad-CAM and cross-attention weights to assess the influence of metadata on predictions.\\
 	To assess external generalization, we evaluated all models on a balanced subset of PAD-UFES-20 with $100$ benign and $100$ malignant samples~\cite{PACHECO2020103545}.
 	
 
