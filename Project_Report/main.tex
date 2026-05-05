@@ -45,7 +45,7 @@
 	\maketitle
 	
 	
-	\vspace{0.5em}
+	\vspace{-1em}
 	
 	
 	% ============================================================
@@ -98,14 +98,10 @@
 	In the preprocessing, we converted the ground-truth label into malignant and benign cases for binary classification. Samples without labels were excluded from the dataset. Further, the labeled data were split into training, validation, and test sets ($80\%$-$10\%$-$10\%$). To avoid data leakage, the dataset was split on a patient level.
 	
 	\paragraph{Implementation Details} 
-	Both the image-only as well as the multimodal model were trained using Binary Cross-entropy loss (BCEWithLogitsLoss), as it is a standard choice for modeling and evaluating predicted probabilities in binary classification tasks~\cite{binary_cross_entropy_ruby2020}. A weight of positive examples was applied to address class imbalance.
-	
-	As an optimizer we chose AdamW because it combines an adaptive gradient-based optimization with regularization via a weight decay, leading to a stable training and improved generalization~\cite{loshchilov2019decoupledweightdecayregularization}.
-	
-	All image encoders were initialized with ImageNet-pretrained weights.
-	
-	Additionally, we performed hyperparameter optimization using Optuna, to determine optimal values for batch size, learning rate and weight decay. The selected hyperparameters are reported in Table~\ref{tab:Hyperopt}.
-	
+	Both the image-only as well as the multimodal model were initialized with ImageNet-pretrained weights and trained using Binary Cross-entropy loss (BCEWithLogitsLoss), as it is a standard choice for modeling and evaluating predicted probabilities in binary classification tasks~\cite{binary_cross_entropy_ruby2020}. A weight of positive examples was applied to address class imbalance.\\
+	As an optimizer we chose AdamW because it combines an adaptive gradient-based optimization with regularization via a weight decay, leading to a stable training and improved generalization~\cite{loshchilov2019decoupledweightdecayregularization}.\\
+	%All image encoders were initialized with ImageNet-pretrained weights.
+	Additionally, we performed hyperparameter optimization using Optuna, to determine optimal values for batch size, learning rate and weight decay. The selected hyperparameters are reported in Table~\ref{tab:Hyperopt}.\\
 	Training images were resized to $224 \times 224$ and augmented using random flips to increase the diversity of the training data and reduce overfitting. Additionally, the image-only model used rotation and color jitter. Those stronger augmentations were not applied to the multimodal to prevent a mismatch between image and metadata. Validation and test images were only resized and normalized.
 	
 	\paragraph{Evaluation}
@@ -123,7 +119,7 @@
 	
 	Table~\ref{tab:midas_results} summarizes the performance of the three implemented models. On the MIDAS dataset, the TabTransformer achieves the best overall performance, with an AUC of $92\%$, indicating that the metadata contains highly informative features for the lesion classification, although this may partially reflect dataset-specific correlations rather than clinically meaningful signals.
 	
-	\begin{table}[H]
+	\begin{table}[h]
 		\centering
 		\caption{Performance of all models on the MIDAS dataset.}
 		\label{tab:midas_results}
@@ -151,11 +147,10 @@
 	
 	\subsection{Explainability Evaluation}
 	The Grad-CAM heatmaps indicate that, in correctly predicts lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probability of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.
-
+	
 	When the images include background elements or a black microscope frame, the area of interest often shifts away from the lesion, typically resulting in incorrect predictions. However, as shown in Fig.~\ref{fig:FP_TN_background} metadata can guide the model to correctly classify the lesion, even though the image-baseline fails to identify the lesion.
-
-	This suggests that metadata may act as a compensatory signal in cases where the visual information is ambiguous or image quality is limited, helping the multimodal model stabilize its predictions. Among the metadata attributes, patient age, lesion location, lesion size, and Fitzpatrick skin type appeared to have the strongest influence on the multimodal model’s prediction behavior.
-
+	
+	This suggests that metadata may act as a compensatory signal in cases where the visual information is ambiguous or image quality is limited, helping the multimodal model stabilize its predictions. Among the metadata attributes, patient age, lesion location, lesion size, and Fitzpatrick skin type appeared to have the strongest influence on the multimodal model’s prediction behavior.\\
 	Nevertheless, as illustrated in Fig.~\ref{fig:TP_FN}, the influence of metadata can also lead to incorrect predictions. While the image-only model correctly predicts a malignant case, the inclusion of metadata causes the multimodal model to missclassify it as benign.
 	
 
@@ -188,7 +183,8 @@
 	% ============================================================
 	\section{Conclusion}
 	% ============================================================
-	As our results show, including patient metadata in the decision-making process of a deep classification model can improve performance in specific cases, particularly when image quality is limited, but its overall contribution depends strongly on dataset characteristics and feature alignment. Especially in cases where the lesion is not the primary focus, metadata can be a determining factor in correctly classifying the lesion. 
+	As our results show, including patient metadata in the decision-making process of a deep classification model can improve performance in specific cases, particularly when image quality is limited, but its overall contribution depends strongly on dataset characteristics and feature alignment. Especially in cases where the lesion is not the primary focus, metadata can be a determining factor in correctly classifying the lesion.\\
+	A key limitation of our work is the relatively small and demographically limited training dataset, which consists mainly of older, light-skinned individuals. This may restrict the generalizability of the models to more diverse populations.\\
 	Future work should further evaluate the robustness of these findings across larger and more diverse clinical datasets. In addition, alternative multimodal fusion strategies could be investigated to better understand how metadata can be integrated and whether the observed effects correspond to clinically meaningful patterns.
 	
 	\newpage
