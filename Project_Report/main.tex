@@ -68,17 +68,17 @@
 	\subsection{Model Architectures}
 	We compared three architectures for binary skin lesion classification: an image-only ResNet18, a metadata-only TabTransformer, and a multimodal model combining both modalities.
 	
-	\subsubsection{Image-Only Baseline}
+	\paragraph{Image-Only Baseline}
 	For the image-only baseline we used a Residual Neural Network with 18 layers (ResNet18)~\citep{he2015deepresiduallearningimage}. %ResNet employs residual skip connections, which facilitate the training of deeper networks by mitigating vanishing gradients. 
 	We selected ResNet18 after it achieved the best validation performance on our dataset, in comparison to VGGNet and GoogLeNet. Further, this architecture is a commonly used approach for skin lesion classification in literature \citep{7893267, yu2025ai, wu2022skin}.
 	
 	
-	\subsubsection{Metadata-Only Baseline}
+	\paragraph{Metadata-Only Baseline}
 	
 	For the metadata-only baseline, we used a TabTransformer, which embeds categorical variables as tokens and models feature interactions through self-attention~\citep{huang2020tabtransformer}. %Numerical features were standardized, while categorical encodings were learned from the training set and reused for validation and testing.\\	
 	In addition to serving as a strong standalone baseline, in literature this architecture is also used as a metadata encoder for the multimodal models. Since the TabTransformer produces contextualised feature representations, it allows metadata to be integrated more effectively with image features during multimodal fusion~\citep{sravani2025transformer}.
 	
-	\subsubsection{Multimodal Model}
+	\paragraph{Multimodal Model}
 	
 	The multimodal model combines the image encoder and metadata encoder into a joint classification framework, using the previously mentioned models.\\	
 	As shown in Fig.~\ref{fig:multimodal_architecture}, the two modalities were fused using a cross-attention mechanism~\citep{cai2022multimodal}, where image features attended to the metadata representations. This allowed the model to incorporate patient-level information into the visual feature space and condition predictions on both modalities. The fused representation is then passed to a classification head for the final prediction. %A conceptual overview is shown in Figure~\ref{fig:multimodal_architecture}.
@@ -159,15 +159,14 @@
 	
 	
 	
-	
-	
 	\subsection{Generalization to External Dataset}
 	As shown in Table~\ref{tab:pad_results}, the image-only model achieves improved performance on the external dataset. This could be attributed to higher image quality and more consistent lesion-centered cropping, which reduces background noise. %This gain is also reflected in the multimodal model, which has the highest AUC of $89\%$. 
 	However, the metadata-only model performance significantly decreases. This drop is likely due to a feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20.
 	%The multimodal model achieved the best performance (AUC 0.8919), followed by the image-only model (AUC 0.8633). The metadata-only model performed close to random, indicating limited transferability of tabular features across datasets. This is likely due to feature mismatch, as important MIDAS attributes such as race and ethnicity are not available in PAD-UFES-20. 
 	
 
-	% ============================================================
+	\subsection{Limitations}
+	 Our study has several limitations. The relatively small and demographically limited training dataset, mainly consisting of older, light-skinned individuals, may restrict the generalizability of the models to more diverse populations. In addition, image quality and cropping inconsistencies in the MIDAS dataset likely affected the performance of the image-based models. Our evaluation of model explainability also relied on manual inspection of Grad-CAM heatmaps, introducing subjective bias. Finally, the contribution of patient metadata appears to depend strongly on dataset characteristics and feature alignment, which may limit the consistency of the observed performance improvements across datasets.	% ============================================================
 	
 	
 	
@@ -175,9 +174,9 @@
 	% ============================================================
 	\section{Conclusion}
 	% ============================================================
-	As our results show, including patient metadata in the decision-making process of a deep classification model can improve performance in specific cases, particularly when image quality is limited, but its overall contribution depends strongly on dataset characteristics and feature alignment. Especially in cases where the lesion is not the primary focus, metadata can be a determining factor in correctly classifying the lesion.\\
-	A key limitation of our work is the relatively small and demographically limited training dataset, which consists mainly of older, light-skinned individuals. This may restrict the generalizability of the models to more diverse populations.\\
-	Future work should further evaluate the robustness of these findings across larger and more diverse clinical datasets. In addition, alternative multimodal fusion strategies could be investigated to better understand how metadata can be integrated and whether the observed effects correspond to clinically meaningful patterns.
+	Our results show that incorporating patient metadata into deep classification models can improve performance in specific cases, particularly when image quality is limited or when the lesion is not the primary focus of the image.
+	In such situations, metadata can become an important factor for correct classification. Future work should validate these findings on larger and more diverse clinical datasets, use more objective evaluation methods, and investigate alternative multimodal fusion strategies to better understand how metadata contributes to clinically meaningful decision-making.
+	
 	
 	\newpage
 	{\small
