@@ -54,7 +54,7 @@
 	
 	Skin cancer is one of the most common cancer types worldwide, making early and accurate detection critical for effective treatment and reducing mortality risk \citep{watson2026, jerant2000early, dildar2021skin}. Diagnosis is often based on image analysis, which has led to the widespread use of deep learning models such as convolutional neural networks (CNNs) \citep{musthafa2024enhanced}.\\
 	Multimodal approaches that combine image data with additional patient information have recently gained attention, as they provide a more comprehensive representation of clinical cases \citep{hao2025}. However, it remains unclear whether such models rely on clinically meaningful signals or instead exploit dataset-specific correlations present in metadata.\\	
-	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. To further understand the underlying decision-making of the model we investigated which metadata features contribute most strongly to the predictions, where the models visual attention lies, and how it is effected by the integration of metadata.
+	In this work, we investigated how patient metadata influences model decision-making in skin lesion classification by comparing image-only, metadata-only, and multimodal models. This setup allowed us to assess the added value of incorporating complementary non-image information. To further understand the underlying decision-making of the model we investigated which metadata features contribute most strongly to the predictions, where the models visual attention lies, and how it is affected by the integration of metadata.
 	
 	The source code is available at \citep{dl_repo}.
 	%However, performance metrics alone are not sufficient to explain the underlying decision-making mechanisms of the model. Therefore, in addition to analyzing the overall classification results, we investigated which metadata features contribute most strongly to the predictions and how the integration of metadata affects the model’s visual attention. 
@@ -88,7 +88,7 @@
 	
 	\subsection{Training Setup}
 	\paragraph{Dataset} 
-	We used the MRA-MIDAS dataset~\citep{midas2023}, which contains dermoscopic and clinical images of equaliy distributed malignant and benign cases paired with patient metadata such as age, ethnicity, and sex. Further the metadata also include lesion-specific attributes including size, anatomical location, and textual descriptions. Further information on the dataset and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}.  
+	We used the MRA-MIDAS dataset~\citep{midas2023}, which contains dermoscopic and clinical images of equally distributed malignant and benign cases paired with patient metadata such as age, ethnicity, and sex. Further the metadata also include lesion-specific attributes including size, anatomical location, and textual descriptions. Further information on the dataset and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}.  
 	%Overall the dataset contains $3216$ images from $733$ patients, with $1500$ benign and $1419$ malignant labeled cases. The metadata contain patient-level information such as age, ethnicity, and sex, as well as lesion-specific attributes including size, anatomical location, and textual descriptions, and up to three additional clinical impressions per sample. Further information on the dataset distributions, such as patients age, skin lesion positions and a metadata correlation analysis, are presented in Fig.~\ref{fig:MIDASdataset_analysis}. 
 	
 	\paragraph{Preprocessing}
@@ -132,7 +132,7 @@
 		\end{tabular}
 	\end{table}
 	
-	In comparison, the image-only ResNet18 and the multimodal model show similar performance%, with AUC values of $77\%$ and $78\%$, respectively. 
+	In comparison, the image-only ResNet18 and the multimodal model show similar performance. %, with AUC values of $77\%$ and $78\%$, respectively. 
 	However, the multimodal model achieves a slightly higher balanced accuracy, which suggests that the inclusion of metadata provides a modest complementary benefit, although the overall improvement remains limited.\\
 	In Table~\ref{tab:gradcam_comparison_numbers} we present a more detailed analysis of how metadata influences the models and how they shift the predictions in the two image based models. The most important metadata features used by the multimodal model are patient age, lesion location and size, as well as fitzpatrick type.\\
 	The comparatively lower performance of the image-based models may be attributed to the quality of the MIDAS images, which often contain substantial background noise and inconsistent cropping. This makes it more difficult for the model to identify the relevant lesion on the image.
@@ -140,10 +140,10 @@
 
 	
 	\subsection{Explainability Evaluation}
-	The Grad-CAM heatmaps indicate that, in correctly predicts lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probability of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.\\	
+	The Grad-CAM heatmaps indicate that, in correctly predicted lesion images, both the image-only and multimodal models mainly focus on the relevant region of the image. However, Fig.~\ref{fig:TP_TP} shows that the metadata slightly increases the prediction probability of the multimodal model in comparison to the image-only model. Fig.~\ref{fig:FP_TN} further highlights that, in some cases, the metadata can even influence the probability of correctly predicting a benign case, whereas the image-only model falsely predicted the lesion to be malignant.\\	
 	When the images include background elements or a black microscope frame, the area of interest often shifts away from the lesion, typically resulting in incorrect predictions. However, as shown in Fig.~\ref{fig:FP_TN_background} metadata can guide the model to correctly classify the lesion, even though the image-baseline fails to identify the lesion.\\	
 	This suggests that metadata may act as a compensatory signal in cases where the visual information is ambiguous or image quality is limited, helping the multimodal model stabilize its predictions. Among the metadata attributes, patient age, lesion location, lesion size, and Fitzpatrick skin type appeared to have the strongest influence on the multimodal model’s prediction behavior.\\
-	Nevertheless, as illustrated in Fig.~\ref{fig:TP_FN}, the influence of metadata can also lead to incorrect predictions. While the image-only model correctly predicts a malignant case, the inclusion of metadata causes the multimodal model to missclassify it as benign.
+	Nevertheless, as illustrated in Fig.~\ref{fig:TP_FN}, the influence of metadata can also lead to incorrect predictions. While the image-only model correctly predicts a malignant case, the inclusion of metadata causes the multimodal model to misclassify it as benign.
 	
 
 	%However, when the image includes background elements or a black microscope frame, the area of interest shifts away from the lesion (Fig.~\ref{fig:grad_background}, ~\ref{fig:gradM_background}). In such cases, the confidence for correct predictions either decreases to just  above $50\%$ or the model fails to produce the correct prediction. The metadata importance plot of the multimodal (Fig.~\ref{fig:gradM_background}) indicated that, in these situations, metadata becomes more influential.
@@ -312,7 +312,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{Img/TP_to_TP_sprd762048797_comparison.png}
-		\caption{Both models use a similar area of interest around the lesion. The multimodal model has a higher malignant probability using metadata contribution.}
+		\caption{Both models focus on a similar area of interest around the lesion. The multimodal model predicts a higher probability of malignancy due to the contribution of metadata.}
 		\label{fig:TP_TP}
 	\end{figure}
 	
@@ -326,14 +326,14 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{Img/FP_to_TN_sprd486848514_comparison.png}
-		\caption{Both model get distracted by the background and do not focus on the lesion. The image-only model predicts a malignant with a nearly $50\%$ confidence, while the multimodal model correctly predicts an benign case due to the metadata contribution.}
+		\caption{Both models are distracted by the background and fail to focus on the lesion. The image-only model predicts malignant with a nearly $50\%$ confidence, while the multimodal model correctly classifies the lesion as benign due to the metadata contribution.}
 		\label{fig:FP_TN_background}
 	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{Img/TP_to_FN_sprd640509576_comparison.png}
-		\caption{Both models use a similar area of interest around the lesion. The metadata cause the multimodal model to falsely predict a benign case, while the image only model correctly predicts a malignant case.}
+		\caption{Both models focus on a similar area of interest around the lesion. However, the metadata causes the multimodal model to incorrectly classify the lesion as benign, while the image-only model correctly predicts a malignant case.}
 		\label{fig:TP_FN}
 	\end{figure}
 	
