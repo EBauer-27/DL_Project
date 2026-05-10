@@ -166,16 +166,19 @@
 	
 
 	\subsection{Limitations}
-	 Our study has several limitations. The relatively small and demographically limited training dataset, mainly consisting of older, light-skinned individuals, may restrict the generalizability of the models to more diverse populations. In addition, image quality and cropping inconsistencies in the MIDAS dataset likely affected the performance of the image-based models. Our evaluation of model explainability also relied on manual inspection of Grad-CAM heatmaps, introducing subjective bias. Finally, the contribution of patient metadata appears to depend strongly on dataset characteristics and feature alignment, which may limit the consistency of the observed performance improvements across datasets.	% ============================================================
-	
-	
-	
+	Our study has several limitations. One of them being the relatively small and demographically limited training dataset, mainly consisting of older, light-skinned individuals. This may restrict the generalizability of the models to more diverse populations.
+	In addition, image quality and cropping inconsistencies in the MIDAS dataset likely affected the performance of the image-based models. Our evaluation of model explainability also relied on manual inspection of Grad-CAM heatmaps, introducing subjective bias.
+	Finally, the contribution of patient metadata appears to depend strongly on dataset characteristics and feature alignment, which may limit the consistency of the observed performance improvements across datasets.
+
+
 	
 	% ============================================================
 	\section{Conclusion}
 	% ============================================================
 	Our results show that incorporating patient metadata into deep classification models can improve performance in specific cases, particularly when image quality is limited or when the lesion is not the primary focus of the image.
-	In such situations, metadata can become an important factor for correct classification. Future work should validate these findings on larger and more diverse clinical datasets, use more objective evaluation methods, and investigate alternative multimodal fusion strategies to better understand how metadata contributes to clinically meaningful decision-making.
+	In such situations, metadata can become an important factor for correct classification.
+	More importantly, our findings suggest that multimodal models act as adaptive decision systems, selectively relying on metadata when visual evidence is uncertain, which raises important questions about whether observed performance gains reflect improved clinical understanding or the exploitation of dataset-specific correlations.\\
+	Future work should validate these findings on larger and more diverse clinical datasets, use more objective evaluation methods, and investigate alternative multimodal fusion strategies to better understand how metadata contributes to clinically meaningful decision-making.
 	
 	
 	\newpage
